@@ -6,51 +6,135 @@
   <title>Reglamento Interno 2024 | Privada Lucania</title>
   <meta name="description" content="Índice temático del Reglamento Interno 2024 de Privada Lucania." />
   <link rel="icon" href="assets/icons/favicon.png" />
+
   <style>
+    /* Tema por defecto: CLARO */
     :root{
-      --bg:#0b1220; --card:#0f1b33; --text:#e7eefc; --muted:#a9b7d6;
-      --accent:#35c26b; --line:rgba(255,255,255,.08);
+      --bg: #ffffff;
+      --card: #f4f6fa;
+      --text: #0b1220;
+      --muted: #4a5568;
+      --accent: #2fbf71;
+      --line: rgba(0,0,0,.12);
     }
-    body{ margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial;
-      background:linear-gradient(180deg,#0b1220,#070b14); color:var(--text); }
-    header{ padding:28px 18px 18px; border-bottom:1px solid var(--line); }
+
+    /* Tema oscuro */
+    [data-theme="dark"]{
+      --bg:#0b1220;
+      --card:#0f1b33;
+      --text:#e7eefc;
+      --muted:#a9b7d6;
+      --accent:#35c26b;
+      --line:rgba(255,255,255,.08);
+    }
+
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    header{
+      padding:28px 18px 18px;
+      border-bottom:1px solid var(--line);
+    }
+
     .wrap{ max-width:980px; margin:0 auto; }
     h1{ margin:0 0 6px; font-size:26px; }
     .sub{ color:var(--muted); margin:0; line-height:1.4; }
-    .toolbar{ display:flex; gap:10px; flex-wrap:wrap; margin-top:16px; }
+
+    .toolbar{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:16px;
+      align-items:stretch;
+    }
+
     .search{ flex:1; min-width:240px; }
     input{
-      width:100%; padding:12px 12px; border-radius:12px; border:1px solid var(--line);
-      background:rgba(255,255,255,.04); color:var(--text); outline:none;
+      width:100%;
+      padding:12px 12px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background: rgba(0,0,0,.03);
+      color: var(--text);
+      outline:none;
     }
-    input::placeholder{ color:rgba(231,238,252,.55); }
+    [data-theme="dark"] input{ background: rgba(255,255,255,.04); }
+    input::placeholder{ color: rgba(11,18,32,.55); }
+    [data-theme="dark"] input::placeholder{ color: rgba(231,238,252,.55); }
+
     .btn{
-      padding:12px 14px; border-radius:12px; border:1px solid var(--line);
-      background:rgba(255,255,255,.04); color:var(--text); cursor:pointer;
-      text-decoration:none; display:inline-flex; align-items:center; gap:8px;
+      padding:12px 14px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background: rgba(0,0,0,.03);
+      color: var(--text);
+      cursor:pointer;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      user-select:none;
+      white-space:nowrap;
     }
+    [data-theme="dark"] .btn{ background: rgba(255,255,255,.04); }
+    .btn:hover{ filter: brightness(0.98); }
+
     main{ padding:18px; }
-    .grid{ display:grid; grid-template-columns:repeat(12,1fr); gap:14px; }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(12,1fr);
+      gap:14px;
+    }
+
     .card{
       grid-column:span 12;
-      background:rgba(255,255,255,.03);
+      background: rgba(0,0,0,.02);
       border:1px solid var(--line);
       border-radius:16px;
       padding:14px 14px 10px;
     }
-    @media(min-width:800px){ .card{ grid-column:span 6; } }
+    [data-theme="dark"] .card{ background: rgba(255,255,255,.03); }
+
+    @media(min-width:800px){
+      .card{ grid-column:span 6; }
+    }
+
     h2{ margin:0 0 8px; font-size:16px; }
     ul{ margin:0; padding-left:18px; }
     li{ margin:6px 0; color:var(--muted); }
+
     a{ color:var(--text); text-decoration:none; }
     a:hover{ text-decoration:underline; }
+
     .tag{
-      display:inline-block; font-size:12px; padding:2px 8px; border-radius:999px;
-      background:rgba(53,194,107,.12); border:1px solid rgba(53,194,107,.22);
-      color:#bff3d1; margin-left:8px;
+      display:inline-block;
+      font-size:12px;
+      padding:2px 8px;
+      border-radius:999px;
+      background: rgba(47,191,113,.12);
+      border:1px solid rgba(47,191,113,.22);
+      color: var(--text);
+      margin-left:8px;
     }
-    footer{ padding:20px 18px; color:var(--muted); border-top:1px solid var(--line); }
-    .note{ margin-top:10px; font-size:13px; color:rgba(231,238,252,.7); }
+
+    .note{
+      margin-top:10px;
+      font-size:13px;
+      color: rgba(11,18,32,.7);
+    }
+    [data-theme="dark"] .note{ color: rgba(231,238,252,.7); }
+
+    footer{
+      padding:20px 18px;
+      color:var(--muted);
+      border-top:1px solid var(--line);
+    }
+
     .hidden{ display:none; }
   </style>
 </head>
@@ -60,16 +144,21 @@
   <div class="wrap">
     <h1>Reglamento Interno 2024 — Privada Lucania</h1>
     <p class="sub">
-      Índice temático con acceso directo a cada artículo/punto del reglamento.  
-      En cada artículo encontrarás: <strong>texto original</strong>, <strong>interpretación</strong>, <strong>ejemplos</strong> y <strong>sanción aplicable</strong>.
+      Índice temático con acceso directo a cada artículo/punto del reglamento.
+      En cada artículo verás: <strong>texto original</strong>, <strong>interpretación</strong>, <strong>ejemplos</strong> y <strong>sanción aplicable</strong>.
     </p>
 
     <div class="toolbar">
       <div class="search">
         <input id="q" type="search" placeholder="Buscar por palabra (ej. 'alberca', 'mascotas', 'música', 'estacionamiento')…" />
       </div>
+
       <a class="btn" href="docs/Reglamento_Interno_2024.pdf" target="_blank" rel="noopener">📄 Ver PDF oficial</a>
       <a class="btn" href="docs/Tabulador_Sanciones_2024_2025.pdf" target="_blank" rel="noopener">⚖️ Tabulador de sanciones</a>
+
+      <button class="btn" type="button" onclick="setTheme('light')">☀️ Claro</button>
+      <button class="btn" type="button" onclick="setTheme('dark')">🌙 Oscuro</button>
+      <button class="btn" type="button" onclick="setTheme('system')">💻 Sistema</button>
     </div>
 
     <p class="note">
@@ -100,8 +189,8 @@
       </section>
 
       <!-- ÁREAS COMUNES / REGLAS GENERALES -->
-      <section class="card" data-topic="áreas comunes bienes comunes uso goce moroso inventario obras mantenimiento administración comité vigilancia">
-        <h2>Áreas comunes y bienes comunes <span class="tag">AC</span></h2>
+      <section class="card" data-topic="áreas comunes bienes comunes uso goce moroso inventario obras mantenimiento administración comité vigilancia ruido música negocios brincolines">
+        <h2>Áreas comunes y convivencia general <span class="tag">AC</span></h2>
         <ul>
           <li><a href="articulos/ac-01.html">AC-01 — Uso de áreas comunes (condición: no moroso)</a></li>
           <li><a href="articulos/ac-02.html">AC-02 — Renuncia de uso no exime obligaciones</a></li>
@@ -109,7 +198,7 @@
           <li><a href="articulos/ac-04.html">AC-04 — Obras necesarias y fondo de mantenimiento</a></li>
           <li><a href="articulos/ac-05.html">AC-05 — Obras nuevas (votación/porcentajes)</a></li>
           <li><a href="articulos/ac-06.html">AC-06 — Gastos comunes por porcentaje de indiviso</a></li>
-          <li><a href="articulos/ac-07.html">AC-07 — Normativa general de convivencia en áreas comunes</a></li>
+          <li><a href="articulos/ac-07.html">AC-07 — Responsabilidad y uso adecuado de áreas comunes</a></li>
           <li><a href="articulos/ac-08.html">AC-08 — Ruido y música: límites y horarios</a></li>
           <li><a href="articulos/ac-09.html">AC-09 — Prohibición de negocios/actividades con fines de lucro</a></li>
           <li><a href="articulos/ac-10.html">AC-10 — Juegos inflables/brincolines: prohibiciones</a></li>
@@ -137,13 +226,13 @@
       <section class="card" data-topic="pérgola asador parrilla horario limpieza ruido música baños mobiliario carbón fogatas bicicletas patines patinetas">
         <h2>Pérgola y asador <span class="tag">PER</span></h2>
         <ul>
-          <li><a href="articulos/per-01.html">PER-01 — Horario de pérgola y ruido</a></li>
-          <li><a href="articulos/per-02.html">PER-02 — Cuidado de instalaciones y reportes de desperfectos</a></li>
+          <li><a href="articulos/per-01.html">PER-01 — Horario de pérgola y control de ruido</a></li>
+          <li><a href="articulos/per-02.html">PER-02 — Cuidado de instalaciones y reporte de desperfectos</a></li>
           <li><a href="articulos/per-03.html">PER-03 — Asadores: uso para no morosos</a></li>
           <li><a href="articulos/per-04.html">PER-04 — Tiempo máximo de uso y limpieza</a></li>
           <li><a href="articulos/per-05.html">PER-05 — Limpieza y cuidado de áreas verdes</a></li>
           <li><a href="articulos/per-06.html">PER-06 — Prohibición: fogatas y asadores portátiles</a></li>
-          <li><a href="articulos/per-07.html">PER-07 — Prohibición: mascotas y vehículos (bicis/patines, etc.)</a></li>
+          <li><a href="articulos/per-07.html">PER-07 — Prohibición: mascotas, bicis y vehículos similares</a></li>
         </ul>
       </section>
 
@@ -155,7 +244,7 @@
           <li><a href="articulos/eve-02.html">EVE-02 — Límite de personas (máx. 25)</a></li>
           <li><a href="articulos/eve-03.html">EVE-03 — Reserva con anticipación y depósito en garantía</a></li>
           <li><a href="articulos/eve-04.html">EVE-04 — Calendario visible con reservas</a></li>
-          <li><a href="articulos/eve-05.html">EVE-05 — Limpieza post-evento y devolución depósito</a></li>
+          <li><a href="articulos/eve-05.html">EVE-05 — Limpieza post-evento y devolución del depósito</a></li>
           <li><a href="articulos/eve-06.html">EVE-06 — Horario permitido y música moderada</a></li>
           <li><a href="articulos/eve-07.html">EVE-07 — Máximo de eventos por año</a></li>
           <li><a href="articulos/eve-08.html">EVE-08 — Respeto al área reservada</a></li>
@@ -167,10 +256,10 @@
       </section>
 
       <!-- IMAGEN CONDOMINAL Y PLUSVALÍA -->
-      <section class="card" data-topic="imagen plusvalía fachada color pintura ventanas puertas terrazas rejas tendederos basura escombro anuncios bazar garaje">
+      <section class="card" data-topic="imagen plusvalía fachada color pintura ventanas puertas terrazas rejas tendederos basura escombro anuncios bazar garaje limpieza">
         <h2>Imagen condominal y plusvalía <span class="tag">IMG</span></h2>
         <ul>
-          <li><a href="articulos/img-01.html">IMG-01 — No afectar tranquilidad/seguridad</a></li>
+          <li><a href="articulos/img-01.html">IMG-01 — Actividades sin afectar tranquilidad/seguridad</a></li>
           <li><a href="articulos/img-02.html">IMG-02 — Prohibición de modificar fachada (incluye color)</a></li>
           <li><a href="articulos/img-03.html">IMG-03 — Mantenimiento visible: consultar catálogo y colores</a></li>
           <li><a href="articulos/img-04.html">IMG-04 — Pintura de fachada mínimo cada 3 años</a></li>
@@ -181,10 +270,10 @@
           <li><a href="articulos/img-09.html">IMG-09 — Prohibición: colgar ropa/toallas/anuncios en exterior</a></li>
           <li><a href="articulos/img-10.html">IMG-10 — Prohibición: tendederos exteriores</a></li>
           <li><a href="articulos/img-11.html">IMG-11 — Prohibición: botes/escombro/objetos al frente</a></li>
-          <li><a href="articulos/img-12.html">IMG-12 — Reparaciones mayores a vehículos: prohibidas</a></li>
-          <li><a href="articulos/img-13.html">IMG-13 — Lavar vehículos: permitido solo en área privada</a></li>
+          <li><a href="articulos/img-12.html">IMG-12 — Prohibición: reparaciones mayores a vehículos</a></li>
+          <li><a href="articulos/img-13.html">IMG-13 — Lavar vehículos: solo en área privada</a></li>
           <li><a href="articulos/img-14.html">IMG-14 — Prohibición: talar/plantar sin autorización</a></li>
-          <li><a href="articulos/img-15.html">IMG-15 — Daños a instalaciones privadas: responsabilidad del propietario</a></li>
+          <li><a href="articulos/img-15.html">IMG-15 — Daños a instalaciones privadas: responsable el propietario</a></li>
           <li><a href="articulos/img-16.html">IMG-16 — Publicidad/ventas: prohibidas (salvo renta interna)</a></li>
           <li><a href="articulos/img-17.html">IMG-17 — Prohibición: ventas de garaje/bazares</a></li>
           <li><a href="articulos/img-18.html">IMG-18 — Ausencias largas: avisar a administración</a></li>
@@ -193,16 +282,210 @@
       </section>
 
       <!-- AUTOS Y ESTACIONAMIENTOS -->
-      <section class="card" data-topic="autos estacionamiento visitantes identificación placas velocidad claxon inmovilizador camiones casas rodantes taxis cajuela">
+      <section class="card" data-topic="autos automóviles estacionamiento visitantes identificación placas velocidad claxon inmovilizador camiones taxis cajuela vehículos grandes">
         <h2>Automóviles y estacionamientos <span class="tag">EST</span></h2>
         <ul>
           <li><a href="articulos/est-01.html">EST-01 — Acceso: identificación obligatoria</a></li>
           <li><a href="articulos/est-02.html">EST-02 — Dejar identificación en caseta</a></li>
-          <li><a href="articulos/est-03.html">EST-03 — Registro de visitas/vehículos y NO estacionarse dentro</a></li>
+          <li><a href="articulos/est-03.html">EST-03 — Registro de visitas/vehículos y no estacionarse dentro</a></li>
           <li><a href="articulos/est-04.html">EST-04 — Sin identificación: no acceso</a></li>
           <li><a href="articulos/est-05.html">EST-05 — Acceso administración/comisionados (urgente)</a></li>
           <li><a href="articulos/est-06.html">EST-06 — Bitácora de taxis</a></li>
           <li><a href="articulos/est-07.html">EST-07 — Revisión de cajuela (ingreso/egreso)</a></li>
-          <li><a href="articulos/est-08.html">EST-08 — Responsabilidad por pertenencias en vehículos</a></li>
+          <li><a href="articulos/est-08.html">EST-08 — Pertenencias en vehículos: responsabilidad del propietario</a></li>
           <li><a href="articulos/est-09.html">EST-09 — Daños entre vehículos: solución entre privados</a></li>
-          <li><a href="articulos
+          <li><a href="articulos/est-10.html">EST-10 — Acceso a medidores (CFE/AGUAKAN) y emergencias</a></li>
+          <li><a href="articulos/est-11.html">EST-11 — Límite de velocidad y consecuencias</a></li>
+          <li><a href="articulos/est-12.html">EST-12 — Accidentes con peatones: responsabilidad civil</a></li>
+          <li><a href="articulos/est-13.html">EST-13 — Música en vehículo: volumen moderado</a></li>
+          <li><a href="articulos/est-14.html">EST-14 — Prohibición de claxon</a></li>
+          <li><a href="articulos/est-15.html">EST-15 — Prohibición: invadir/obstruir áreas privativas ajenas</a></li>
+          <li><a href="articulos/est-16.html">EST-16 — Prohibición: vehículos de gran porte dentro</a></li>
+          <li><a href="articulos/est-17.html">EST-17 — Vehículos de gran porte: estacionar fuera</a></li>
+          <li><a href="articulos/est-18.html">EST-18 — Cajón asignado: uno por vivienda</a></li>
+          <li><a href="articulos/est-19.html">EST-19 — Aceptación de bienes privativos adquiridos</a></li>
+          <li><a href="articulos/est-20.html">EST-20 — Segundo vehículo: debe estacionarse fuera (salvo que quepa)</a></li>
+          <li><a href="articulos/est-21.html">EST-21 — Prohibición: estacionarse en banquetas de entrada/salida</a></li>
+          <li><a href="articulos/est-22.html">EST-22 — Inmovilizador por infracción y pago de sanción</a></li>
+        </ul>
+      </section>
+
+      <!-- MASCOTAS -->
+      <section class="card" data-topic="mascotas perros gatos correa excretas bolsas vacunación collar identificación alberca pérgola">
+        <h2>Mascotas <span class="tag">MAS</span></h2>
+        <ul>
+          <li><a href="articulos/mas-01.html">MAS-01 — Prohibición: animales que afecten seguridad/salubridad</a></li>
+          <li><a href="articulos/mas-02.html">MAS-02 — Prohibición: animales venenosos/nocivos/peligrosos</a></li>
+          <li><a href="articulos/mas-03.html">MAS-03 — Prohibición: animales no domésticos</a></li>
+          <li><a href="articulos/mas-04.html">MAS-04 — Vacunación: carné actualizado</a></li>
+          <li><a href="articulos/mas-05.html">MAS-05 — Collar con identificación (número de casa)</a></li>
+          <li><a href="articulos/mas-06.html">MAS-06 — Responsabilidad por acciones y daños</a></li>
+          <li><a href="articulos/mas-07.html">MAS-07 — Obligatorio: bolsas para excretas</a></li>
+          <li><a href="articulos/mas-08.html">MAS-08 — Prohibición: mascotas al frente (solo dentro/patio trasero)</a></li>
+          <li><a href="articulos/mas-09.html">MAS-09 — Paseo: preferentemente exterior, siempre con correa</a></li>
+          <li><a href="articulos/mas-10.html">MAS-10 — Prohibición: mascotas sueltas vagando</a></li>
+          <li><a href="articulos/mas-11.html">MAS-11 — Prohibición: alberca/pérgola/asadores</a></li>
+        </ul>
+      </section>
+
+      <!-- MUDANZAS -->
+      <section class="card" data-topic="mudanzas muebles horarios aviso administración arrendatarios salida vehículos daños multa">
+        <h2>Mudanzas <span class="tag">MUD</span></h2>
+        <ul>
+          <li><a href="articulos/mud-01.html">MUD-01 — Aviso por escrito de nuevo arrendatario</a></li>
+          <li><a href="articulos/mud-02.html">MUD-02 — Horarios de mudanza/entrega de muebles</a></li>
+          <li><a href="articulos/mud-03.html">MUD-03 — Autorización del propietario para salida de arrendatario</a></li>
+          <li><a href="articulos/mud-04.html">MUD-04 — Protección del inmueble (control de salida)</a></li>
+          <li><a href="articulos/mud-05.html">MUD-05 — Solo administrador/delegados autorizan acceso de mudanza</a></li>
+          <li><a href="articulos/mud-06.html">MUD-06 — Daños en áreas comunes: multa por costo de reparación</a></li>
+        </ul>
+      </section>
+
+      <!-- BASURA -->
+      <section class="card" data-topic="basura desechos orgánica inorgánica contenedores reciclables escombro cajas plagas olores">
+        <h2>Basura y desechos <span class="tag">BAS</span></h2>
+        <ul>
+          <li><a href="articulos/bas-01.html">BAS-01 — Basura en bolsas cerradas y separación orgánica/inorgánica</a></li>
+          <li><a href="articulos/bas-02.html">BAS-02 — Prohibición: tirar fuera o en contenedor incorrecto</a></li>
+          <li><a href="articulos/bas-03.html">BAS-03 — Multa por arrojar basura o no depositar correctamente</a></li>
+          <li><a href="articulos/bas-04.html">BAS-04 — Desechos voluminosos: compactar o retirar por cuenta propia</a></li>
+          <li><a href="articulos/bas-05.html">BAS-05 — Escombro de obra: prohibido en contenedores (retirar fuera)</a></li>
+          <li><a href="articulos/bas-06.html">BAS-06 — Prohibición: exigir servicio particular a personal del condominio</a></li>
+          <li><a href="articulos/bas-07.html">BAS-07 — Prohibición: contenedores al frente de viviendas</a></li>
+        </ul>
+      </section>
+
+      <!-- VISITAS -->
+      <section class="card" data-topic="visitas acceso caseta aviso identificación taxi bitácora respeto vigilancia">
+        <h2>Visitas <span class="tag">VIS</span></h2>
+        <ul>
+          <li><a href="articulos/vis-01.html">VIS-01 — Aviso de visitas: nombre, casa y horario</a></li>
+          <li><a href="articulos/vis-02.html">VIS-02 — Visita sin aviso: identificación y autorización expresa</a></li>
+          <li><a href="articulos/vis-03.html">VIS-03 — Respeto a vigilancia y cumplimiento del reglamento</a></li>
+          <li><a href="articulos/vis-04.html">VIS-04 — Visitas en taxi: registro en bitácora</a></li>
+        </ul>
+      </section>
+
+      <!-- DERECHOS / OBLIGACIONES / PROHIBICIONES -->
+      <section class="card" data-topic="derechos obligaciones prohibiciones asamblea voto carta poder drogas armas alcohol moral ilícitas escándalo ruido">
+        <h2>Derechos, obligaciones y prohibiciones <span class="tag">DER</span></h2>
+        <ul>
+          <li><a href="articulos/der-01.html">DER-01 — Derechos de uso y disfrute conforme al reglamento</a></li>
+          <li><a href="articulos/der-02.html">DER-02 — Voz y voto en asamblea según proindiviso</a></li>
+          <li><a href="articulos/der-03.html">DER-03 — Representación por carta poder con testigos</a></li>
+          <li><a href="articulos/der-04.html">DER-04 — Derecho a enajenar/arrendar/disponer sin limitación</a></li>
+          <li><a href="articulos/der-05.html">DER-05 — Obligación: cumplir y hacer cumplir reglamento/ley</a></li>
+          <li><a href="articulos/der-06.html">DER-06 — Consecuencias por quebrantos (voto/uso áreas comunes)</a></li>
+          <li><a href="articulos/der-07.html">DER-07 — Prohibición: actos que afecten paz y comodidad</a></li>
+          <li><a href="articulos/der-08.html">DER-08 — Prohibición: interferir servicios e instalaciones</a></li>
+          <li><a href="articulos/der-09.html">DER-09 — Prohibición: menoscabar buen aspecto del condominio</a></li>
+          <li><a href="articulos/der-10.html">DER-10 — Prohibición: drogas o enervantes</a></li>
+          <li><a href="articulos/der-11.html">DER-11 — Prohibición: armas en áreas comunes o privativas</a></li>
+          <li><a href="articulos/der-12.html">DER-12 — Prohibición: actividades ilícitas/indecentes/contrarias a moral</a></li>
+          <li><a href="articulos/der-13.html">DER-13 — Prohibición: alcohol en área de alberca/chapoteadero</a></li>
+          <li><a href="articulos/der-14.html">DER-14 — Prohibición: juegos riesgosos con balones pesados</a></li>
+        </ul>
+      </section>
+
+      <!-- CUOTAS / SANCIONES / EMBARGOS -->
+      <section class="card" data-topic="cuotas mantenimiento pago extemporáneo sanciones multas amonestación reparación embargo liquidación venta forzada morosidad">
+        <h2>Cuotas, sanciones y embargos <span class="tag">CUO</span></h2>
+        <ul>
+          <li><a href="articulos/cuo-01.html">CUO-01 — Pago de mantenimiento: primeros 10 días del mes</a></li>
+          <li><a href="articulos/cuo-02.html">CUO-02 — Pago extemporáneo: recargos y suspensión de servicios</a></li>
+          <li><a href="articulos/cuo-03.html">CUO-03 — Prelación de pago (orden de aplicación)</a></li>
+          <li><a href="articulos/cuo-04.html">CUO-04 — Sanciones: tipos (amonestación, multa, reparación, etc.)</a></li>
+          <li><a href="articulos/cuo-05.html">CUO-05 — Facultad del administrador para imponer sanciones</a></li>
+          <li><a href="articulos/cuo-06.html">CUO-06 — Faltas imputables: lista general</a></li>
+          <li><a href="articulos/cuo-07.html">CUO-07 — Notificación y criterios de imposición</a></li>
+          <li><a href="articulos/cuo-08.html">CUO-08 — Anexo 1: tabulador de sanciones</a></li>
+          <li><a href="articulos/cuo-09.html">CUO-09 — Comprobante de pago de multa</a></li>
+          <li><a href="articulos/cuo-10.html">CUO-10 — Restricción de portón por adeudos</a></li>
+          <li><a href="articulos/cuo-11.html">CUO-11 — Embargos: facultades y procedimiento general</a></li>
+          <li><a href="articulos/cuo-12.html">CUO-12 — Embargo y destino del bien (asamblea)</a></li>
+        </ul>
+      </section>
+
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      Versión digital del Reglamento Interno 2024 — Privada Lucania.
+      Las interpretaciones y ejemplos son orientativos y no sustituyen la normativa aplicable.
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ====== Tema: claro/oscuro/sistema (persistente) ======
+  const root = document.documentElement;
+
+  function applyTheme(theme){
+    if(theme === 'dark'){
+      root.setAttribute('data-theme','dark');
+    } else if(theme === 'light'){
+      root.removeAttribute('data-theme');
+    } else {
+      // system
+      root.removeAttribute('data-theme');
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        root.setAttribute('data-theme','dark');
+      }
+    }
+  }
+
+  function setTheme(theme){
+    localStorage.setItem('theme', theme);
+    applyTheme(theme);
+  }
+
+  const savedTheme = localStorage.getItem('theme') || 'system';
+  applyTheme(savedTheme);
+
+  if (window.matchMedia) {
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+      if ((localStorage.getItem('theme') || 'system') === 'system') {
+        applyTheme('system');
+      }
+    });
+  }
+
+  // ====== Buscador simple (filtra tarjetas y sus enlaces) ======
+  const q = document.getElementById('q');
+  const cards = Array.from(document.querySelectorAll('.card'));
+
+  function normalize(s){
+    return (s || '')
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g,''); // quita acentos
+  }
+
+  function runSearch(){
+    const term = normalize(q.value.trim());
+
+    cards.forEach(card => {
+      const topic = normalize(card.getAttribute('data-topic') || '');
+      const links = Array.from(card.querySelectorAll('li'));
+      let anyVisible = false;
+
+      links.forEach(li => {
+        const text = normalize(li.textContent);
+        const match = !term || topic.includes(term) || text.includes(term);
+        li.classList.toggle('hidden', !match);
+        if (match) anyVisible = true;
+      });
+
+      // Si ningún link quedó visible, ocultamos toda la tarjeta
+      card.classList.toggle('hidden', !anyVisible);
+    });
+  }
+
+  q.addEventListener('input', runSearch);
+</script>
+
+</body>
+</html>
