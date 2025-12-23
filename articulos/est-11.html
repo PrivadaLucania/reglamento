@@ -1,207 +1,48 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Límite de velocidad dentro del condominio · Privada Lucania</title>
-  <style>
-:root{
-  --bg:#0b0f17;
-  --card:#111827;
-  --text:#e5e7eb;
-  --muted:#9ca3af;
-  --line:rgba(255,255,255,.10);
-  --accent:#22c55e;
-  --link:#60a5fa;
-  --shadow:0 10px 25px rgba(0,0,0,.25);
-}
-@media (prefers-color-scheme: light){
-  :root{
-    --bg:#f5f7fb;
-    --card:#ffffff;
-    --text:#0f172a;
-    --muted:#475569;
-    --line:rgba(2,6,23,.12);
-    --accent:#16a34a;
-    --link:#2563eb;
-    --shadow:0 10px 25px rgba(2,6,23,.10);
-  }
-}
-html[data-theme="light"]{
-  --bg:#f5f7fb; --card:#ffffff; --text:#0f172a; --muted:#475569; --line:rgba(2,6,23,.12);
-  --accent:#16a34a; --link:#2563eb; --shadow:0 10px 25px rgba(2,6,23,.10);
-}
-html[data-theme="dark"]{
-  --bg:#0b0f17; --card:#111827; --text:#e5e7eb; --muted:#9ca3af; --line:rgba(255,255,255,.10);
-  --accent:#22c55e; --link:#60a5fa; --shadow:0 10px 25px rgba(0,0,0,.25);
-}
-*{box-sizing:border-box}
-body{
-  margin:0;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  line-height:1.55;
-}
-a{color:var(--link); text-decoration:none}
-a:hover{text-decoration:underline}
-.wrap{max-width:980px; margin:0 auto; padding:24px 16px 56px;}
-.topbar{
-  display:flex; align-items:center; justify-content:space-between;
-  gap:12px; padding:10px 12px; border:1px solid var(--line);
-  background:rgba(255,255,255,.02); border-radius:14px; box-shadow:var(--shadow);
-  position:sticky; top:12px; backdrop-filter: blur(8px);
-}
-.brand{display:flex; align-items:center; gap:10px; min-width:0}
-.badge{
-  display:inline-flex; align-items:center; gap:8px;
-  padding:6px 10px; border-radius:999px; border:1px solid var(--line);
-  background:rgba(34,197,94,.10); color:var(--text); font-weight:700; font-size:12px;
-}
-.badge .dot{width:8px; height:8px; border-radius:999px; background:var(--accent)}
-.navlinks{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end}
-.btn{
-  display:inline-flex; align-items:center; justify-content:center; gap:8px;
-  padding:8px 10px; border-radius:10px; border:1px solid var(--line);
-  background:rgba(255,255,255,.03); color:var(--text);
-  cursor:pointer; font-weight:600; font-size:14px;
-}
-.btn:hover{background:rgba(255,255,255,.06); text-decoration:none}
-h1{font-size:26px; margin:18px 0 6px}
-.lead{color:var(--muted); margin:0 0 18px}
-.grid{display:grid; grid-template-columns:1fr; gap:14px}
-@media (min-width: 860px){
-  .grid{grid-template-columns: 1fr 1fr;}
-}
-.card{
-  border:1px solid var(--line);
-  background:var(--card);
-  border-radius:16px;
-  padding:16px;
-  box-shadow:var(--shadow);
-}
-.k{
-  display:inline-block;
-  padding:2px 10px;
-  border-radius:999px;
-  border:1px solid var(--line);
-  background:rgba(34,197,94,.10);
-  font-weight:700;
-  font-size:12px;
-}
-.muted{color:var(--muted)}
-hr.sep{border:0; border-top:1px solid var(--line); margin:16px 0}
-blockquote{
-  margin:0; padding:12px 14px;
-  border-left:4px solid var(--accent);
-  background:rgba(34,197,94,.06);
-  border-radius:12px;
-}
-.small{font-size:13px}
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>EST-11 Velocidad</title>
+<meta name="description" content="EST-11" />
+<link rel="icon" href="../assets/icons/favicon.png" />
+<style>
+:root{--bg:#ffffff;--card:#f4f6fa;--text:#0b1220;--muted:#4a5568;--accent:#2fbf71;--line:rgba(0,0,0,.12);}
+[data-theme="dark"]{--bg:#0b1220;--card:#0f1b33;--text:#e7eefc;--muted:#a9b7d6;--accent:#35c26b;--line:rgba(255,255,255,.08);}
+body{margin:0;font-family:system-ui;background:var(--bg);color:var(--text);}
+header{padding:20px 18px;border-bottom:1px solid var(--line);}
+.wrap{max-width:980px;margin:0 auto;}
+.topbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between;}
+.btn{padding:10px 12px;border-radius:12px;border:1px solid var(--line);background:rgba(0,0,0,.03);color:var(--text);text-decoration:none;}
+main{padding:18px;}
+.card{background:rgba(0,0,0,.02);border:1px solid var(--line);border-radius:16px;padding:14px;margin-bottom:14px;}
+.k{font-size:12px;padding:2px 8px;border-radius:999px;border:1px solid rgba(47,191,113,.22);background:rgba(47,191,113,.12);}
+.muted{color:var(--muted);}
 </style>
-  <!-- Contador de visitas (GoatCounter) -->
-  <script
-    data-goatcounter="https://privadalucania.goatcounter.com/count"
-    async
-    src="https://gc.zgo.at/count.js">
-  </script>
+<script data-goatcounter="https://privadalucania.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </head>
 <body>
-  <div class="wrap">
-    <div class="topbar">
-      <div class="brand">
-        <span class="badge"><span class="dot"></span> Reglamento · Artículo EST-11</span>
-        <a class="btn" href="../index.html" title="Volver al índice">← Índice</a>
-      </div>
-      <div class="navlinks">
-        <a class="btn" href="../docs/REGLAMNETO%20LUCANIA%20(Vigente).pdf" target="_blank" rel="noopener">📄 Reglamento (PDF)</a>
-        <a class="btn" href="../docs/TABULADOR%20DE%20SANCIONES%20LUCANIA%202024-2025.pdf" target="_blank" rel="noopener">📑 Tabulador</a>
-        <button class="btn" onclick="window.__themeCycle()">
-          🌗 Tema: <span id="themeLabel">Auto</span>
-        </button>
-      </div>
-    </div>
-
-    <h1>Límite de velocidad dentro del condominio</h1>
-    <p class="lead">Texto original + explicación en lenguaje sencillo, con ejemplos.</p>
-
-    <div class="grid">
-      <section class="card">
-        <h2 style="margin:0 0 8px;">Texto original</h2>
-        <blockquote class="small">«El límite de velocidad dentro del condominio es de 10 kilómetros por horas. Quien no cumpla con este lineamiento será obligado en primera instancia por seguridad del condominio a reducir la marcha y en segunda instancia mediante seguridad pública a retirarse o a dejar el vehículo fuera del condominio más la multa que la administración considere pertinente.»</blockquote>
-        <p class="muted small" style="margin:10px 0 0;">
-          Este texto se muestra tal cual aparece en el reglamento, para consulta.
-        </p>
-      </section>
-
-      <section class="card">
-        <h2 style="margin:0 0 8px;">Interpretación (lenguaje sencillo)</h2>
-        <p style="margin:0;">Dentro del condominio se debe manejar muy despacio (máximo 10 km/h). Si alguien excede la velocidad, primero se le pide reducir la marcha por seguridad; si insiste, puede intervenir seguridad pública y además puede aplicarse una multa.</p>
-      </section>
-    </div>
-
-    <section class="card" style="margin-top:14px;">
-      <h2 style="margin:0 0 8px;">Ejemplos y escenarios</h2>
-      <ul style="margin:0; padding-left:18px;">
-        <li>✅ Vas a 10 km/h o menos y cedes el paso a peatones.</li><li>❌ Acelerar en calles internas “porque no viene nadie”.</li><li>❌ Rebasar o “dar el acelerón” cerca de niños, bicicletas o mascotas.</li><li>Si te piden bajar la velocidad, hazlo de inmediato; evita discusiones en el lugar.</li>
-      </ul>
-    </section>
-
-    <section class="card" style="margin-top:14px;">
-  <h2 style="margin:0 0 8px;">Sanción aplicable</h2>
-  <p style="margin:0 0 8px;">
-    <span class="k">Nivel: BAJO</span>
-    <span class="muted">· Caso relacionado: Circular a más de 10km/h en el estacionamiento (velocidad máxima permitida).</span>
-  </p>
-  <ul style="margin:0; padding-left:18px;">
-    <li><strong>1ª sanción:</strong> $1,500.00</li>
-    <li><strong>2ª sanción:</strong> $3,000.00</li>
-    <li><strong>3ª sanción:</strong> $4,500.00</li>
-  </ul>
-  <p class="muted" style="margin:10px 0 0;">
-    Nota: En caso de reincidencia, las sanciones pueden elevarse al doble y al triple.
-  </p>
-</section>
-
-    <section class="card" style="margin-top:14px;">
-      <h2 style="margin:0 0 8px;">Aviso</h2>
-      <p class="muted" style="margin:0;">
-        La “interpretación” y los ejemplos son una guía para facilitar la comprensión.
-        En caso de conflicto, prevalece el texto del reglamento y los acuerdos vigentes del condominio.
-      </p>
-    </section>
-
-    <hr class="sep">
-    <p class="muted small" style="margin:0;">
-      Privada Lucania · Sitio informativo del reglamento.
-    </p>
-  </div>
-
-  <script>
-(function(){
-  const root = document.documentElement;
-  const key = "lucania-theme";
-  function apply(v){
-    if(v==="auto"){ root.removeAttribute("data-theme"); }
-    else{ root.setAttribute("data-theme", v); }
-  }
-  function cycle(){
-    const cur = localStorage.getItem(key) || "auto";
-    const next = cur==="auto" ? "dark" : (cur==="dark" ? "light" : "auto");
-    localStorage.setItem(key, next);
-    apply(next);
-    label();
-  }
-  function label(){
-    const cur = localStorage.getItem(key) || "auto";
-    const map = {auto:"Auto", dark:"Oscuro", light:"Claro"};
-    const el = document.getElementById("themeLabel");
-    if(el) el.textContent = map[cur] || "Auto";
-  }
-  window.__themeCycle = cycle;
-  apply(localStorage.getItem(key) || "auto");
-  window.addEventListener("DOMContentLoaded", label);
-})();
-</script>
+<header>
+<div class="wrap">
+<div class="topbar">
+<a class="btn" href="../index.html">⬅️ Índice</a>
+<a class="btn" href="../docs/Reglamento_Interno_2024.pdf" target="_blank">📄 Reglamento</a>
+<a class="btn" href="../docs/Tabulador_Sanciones_2024_2025.pdf" target="_blank">⚖️ Tabulador</a>
+</div>
+</div>
+</header>
+<main>
+<div class="wrap">
+<div class="card">
+<span class="k">EST-11</span>
+<h1>Límite de velocidad</h1>
+<p class="muted">Estacionamiento</p>
+</div>
+<div class="card"><strong>Texto original</strong><p>Velocidad máxima 10 km/h.</p></div>
+<div class="card"><strong>Interpretación</strong><p>Conducir despacio.</p></div>
+<div class="card"><strong>Ejemplos</strong><ul><li>No acelerar</li></ul></div>
+<div class="card"><strong>Sanción</strong><p>Nivel bajo</p></div>
+</div>
+</main>
 </body>
 </html>
