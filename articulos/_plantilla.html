@@ -8,43 +8,33 @@
   <link rel="icon" href="../assets/icons/favicon.png" />
 
   <style>
-    :root{
-      --bg:#ffffff; --card:#f4f6fa; --text:#0b1220; --muted:#4a5568;
-      --accent:#2fbf71; --line:rgba(0,0,0,.12);
-    }
-    [data-theme="dark"]{
-      --bg:#0b1220; --card:#0f1b33; --text:#e7eefc; --muted:#a9b7d6;
-      --accent:#35c26b; --line:rgba(255,255,255,.08);
-    }
+    :root{ --bg:#ffffff; --card:#f4f6fa; --text:#0b1220; --muted:#4a5568; --accent:#2fbf71; --line:rgba(0,0,0,.12); }
+    [data-theme="dark"]{ --bg:#0b1220; --card:#0f1b33; --text:#e7eefc; --muted:#a9b7d6; --accent:#35c26b; --line:rgba(255,255,255,.08); }
     body{ margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial; background:var(--bg); color:var(--text); }
     header{ padding:20px 18px; border-bottom:1px solid var(--line); }
     .wrap{ max-width:980px; margin:0 auto; }
     .topbar{ display:flex; gap:10px; flex-wrap:wrap; align-items:center; justify-content:space-between; }
-    .btn{
-      padding:10px 12px; border-radius:12px; border:1px solid var(--line);
-      background:rgba(0,0,0,.03); color:var(--text); cursor:pointer; text-decoration:none;
-      display:inline-flex; align-items:center; gap:8px; white-space:nowrap;
-    }
+    .btn{ padding:10px 12px; border-radius:12px; border:1px solid var(--line); background:rgba(0,0,0,.03); color:var(--text); cursor:pointer; text-decoration:none; display:inline-flex; align-items:center; gap:8px; white-space:nowrap; }
     [data-theme="dark"] .btn{ background:rgba(255,255,255,.04); }
     main{ padding:18px; }
     .grid{ display:grid; grid-template-columns:repeat(12,1fr); gap:14px; }
-    .card{
-      grid-column:span 12; background:rgba(0,0,0,.02); border:1px solid var(--line);
-      border-radius:16px; padding:14px;
-    }
+    .card{ grid-column:span 12; background:rgba(0,0,0,.02); border:1px solid var(--line); border-radius:16px; padding:14px; }
     [data-theme="dark"] .card{ background:rgba(255,255,255,.03); }
     h1{ margin:0; font-size:20px; }
     .muted{ color:var(--muted); }
-    .k{ display:inline-block; font-size:12px; padding:2px 8px; border-radius:999px;
-      border:1px solid rgba(47,191,113,.22); background:rgba(47,191,113,.12); }
-    blockquote{
-      margin:0; padding:12px 12px; border-left:4px solid var(--accent);
-      background:rgba(0,0,0,.03); border-radius:12px;
-    }
+    .k{ display:inline-block; font-size:12px; padding:2px 8px; border-radius:999px; border:1px solid rgba(47,191,113,.22); background:rgba(47,191,113,.12); }
+    blockquote{ margin:0; padding:12px 12px; border-left:4px solid var(--accent); background:rgba(0,0,0,.03); border-radius:12px; }
     [data-theme="dark"] blockquote{ background:rgba(255,255,255,.04); }
     ul{ margin:8px 0 0; padding-left:18px; }
     footer{ padding:18px; border-top:1px solid var(--line); color:var(--muted); }
   </style>
+
+  <!-- Contador de visitas (GoatCounter) -->
+  <script
+    data-goatcounter="https://privadalucania.goatcounter.com/count"
+    async
+    src="https://gc.zgo.at/count.js">
+  </script>
 </head>
 
 <body>
@@ -53,6 +43,7 @@
     <div class="topbar">
       <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
         <a class="btn" href="../index.html">⬅️ Volver al índice</a>
+        <!-- AJUSTA estos nombres si tus PDFs se llaman diferente -->
         <a class="btn" href="../docs/Reglamento_Interno_2024.pdf" target="_blank" rel="noopener">📄 PDF oficial</a>
         <a class="btn" href="../docs/Tabulador_Sanciones_2024_2025.pdf" target="_blank" rel="noopener">⚖️ Tabulador</a>
       </div>
@@ -67,23 +58,35 @@
 
 <main>
   <div class="wrap">
+    <!-- ENCABEZADO DEL ARTÍCULO -->
     <section class="card">
       <div class="muted"><span class="k">ID</span> · Tema: <span class="k">TEMA</span></div>
       <h1 style="margin-top:8px;">TÍTULO DEL ARTÍCULO</h1>
       <p class="muted" style="margin:8px 0 0;">Referencia: Reglamento Interno 2024 · Privada Lucania</p>
     </section>
 
+    <!-- CUERPO EN GRID -->
     <div class="grid" style="margin-top:14px;">
+
       <section class="card">
         <h2 style="margin:0 0 8px;">Texto original (literal)</h2>
         <blockquote>
-          Pega aquí el texto EXACTO del reglamento.
+          PEGA AQUÍ EL TEXTO EXACTO DEL REGLAMENTO.
         </blockquote>
       </section>
 
       <section class="card">
         <h2 style="margin:0 0 8px;">Interpretación en lenguaje sencillo</h2>
-        <p class="muted" style="margin:0;">Explica qué significa, qué sí y qué no.</p>
+        <p style="margin:0;">
+          EXPLICA QUÉ SIGNIFICA, QUÉ SÍ Y QUÉ NO.
+        </p>
+        <!-- (Opcional) lista corta dentro de interpretación -->
+        <!--
+        <ul>
+          <li><strong>Punto 1:</strong> …</li>
+          <li><strong>Punto 2:</strong> …</li>
+        </ul>
+        -->
       </section>
 
       <section class="card">
@@ -95,12 +98,35 @@
         </ul>
       </section>
 
+      <!-- SANCION APLICABLE (si aplica, deja esta sección; si no aplica, usa el bloque "No tipificado") -->
       <section class="card">
         <h2 style="margin:0 0 8px;">Sanción aplicable</h2>
+
+        <!-- OPCIÓN 1: sanción tipificada -->
+        <!--
+        <p style="margin:0 0 8px;">
+          <span class="k">Nivel: BAJO/MEDIO/ALTO</span>
+          <span class="muted">· Caso relacionado: …</span>
+        </p>
+        <ul style="margin:0; padding-left:18px;">
+          <li><strong>1ª sanción:</strong> $…</li>
+          <li><strong>2ª sanción:</strong> $…</li>
+          <li><strong>3ª sanción:</strong> $…</li>
+        </ul>
+        <p class="muted" style="margin:10px 0 0;">
+          Nota: En caso de reincidencia, las sanciones pueden elevarse al doble y al triple.
+        </p>
+        -->
+
+        <!-- OPCIÓN 2: no tipificado de forma expresa -->
+        <p style="margin:0 0 8px;">
+          <span class="k">Estado: Pendiente / No tipificado</span>
+        </p>
         <p class="muted" style="margin:0;">
-          Aquí mostraremos el nivel y montos del tabulador (lo llenamos cuando terminemos el mapa completo).
+          Si este caso no aparece de forma textual en el Tabulador, se documentará y resolverá conforme a criterios generales del reglamento y acuerdos vigentes.
         </p>
       </section>
+
     </div>
   </div>
 </main>
@@ -116,7 +142,7 @@
   function applyTheme(theme){
     if(theme === 'dark'){ root.setAttribute('data-theme','dark'); }
     else if(theme === 'light'){ root.removeAttribute('data-theme'); }
-    else {
+    else{
       root.removeAttribute('data-theme');
       if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
         root.setAttribute('data-theme','dark');
@@ -133,4 +159,3 @@
 </script>
 </body>
 </html>
-
