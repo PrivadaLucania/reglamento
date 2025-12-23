@@ -6,6 +6,7 @@
   <title>PE-07 — Horarios de trabajos (remodelaciones) | Reglamento 2024</title>
   <meta name="description" content="PE-07 del Reglamento Interno 2024 de Privada Lucania." />
   <link rel="icon" href="../assets/icons/favicon.png" />
+
   <style>
     :root{ --bg:#ffffff; --card:#f4f6fa; --text:#0b1220; --muted:#4a5568; --accent:#2fbf71; --line:rgba(0,0,0,.12); }
     [data-theme="dark"]{ --bg:#0b1220; --card:#0f1b33; --text:#e7eefc; --muted:#a9b7d6; --accent:#35c26b; --line:rgba(255,255,255,.08); }
@@ -27,7 +28,15 @@
     ul{ margin:8px 0 0; padding-left:18px; }
     footer{ padding:18px; border-top:1px solid var(--line); color:var(--muted); }
   </style>
+
+  <!-- Contador de visitas (GoatCounter) -->
+  <script
+    data-goatcounter="https://privadalucania.goatcounter.com/count"
+    async
+    src="https://gc.zgo.at/count.js">
+  </script>
 </head>
+
 <body>
 <header>
   <div class="wrap">
@@ -88,26 +97,25 @@
         </ul>
       </section>
 
-<section class="card">
-  <h2 style="margin:0 0 8px;">Sanción aplicable</h2>
+      <section class="card">
+        <h2 style="margin:0 0 8px;">Sanción aplicable</h2>
 
-  <p style="margin:0 0 8px;">
-    <span class="k">Nivel: BAJO</span>
-    <span class="muted">· Caso relacionado: Realizar obras o reparaciones fuera de los horarios establecidos (salvo emergencia autorizada).</span>
-  </p>
+        <p style="margin:0 0 8px;">
+          <span class="k">Nivel: BAJO</span>
+          <span class="muted">· Caso relacionado: Realizar obras o reparaciones fuera de los horarios establecidos (salvo emergencia autorizada).</span>
+        </p>
 
-  <ul style="margin:0; padding-left:18px;">
-    <li><strong>1ª sanción:</strong> $1,500.00</li>
-    <li><strong>2ª sanción:</strong> $3,000.00</li>
-    <li><strong>3ª sanción:</strong> $4,500.00</li>
-  </ul>
+        <ul style="margin:0; padding-left:18px;">
+          <li><strong>1ª sanción:</strong> $1,500.00</li>
+          <li><strong>2ª sanción:</strong> $3,000.00</li>
+          <li><strong>3ª sanción:</strong> $4,500.00</li>
+        </ul>
 
-  <p class="muted" style="margin:10px 0 0;">
-    Nota: En caso de reincidencia, las sanciones pueden elevarse al doble y al triple.
-  </p>
-</section>
+        <p class="muted" style="margin:10px 0 0;">
+          Nota: En caso de reincidencia, las sanciones pueden elevarse al doble y al triple.
+        </p>
+      </section>
 
-      
     </div>
   </div>
 </main>
@@ -125,7 +133,7 @@
     else if(theme === 'light'){ root.removeAttribute('data-theme'); }
     else{
       root.removeAttribute('data-theme');
-      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
         root.setAttribute('data-theme','dark');
       }
     }
@@ -140,4 +148,3 @@
 </script>
 </body>
 </html>
-
