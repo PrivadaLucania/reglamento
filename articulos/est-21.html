@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prohibido estacionarse junto a las banquetas de entrada y salida · Privada Lucania</title>
+  <style>
+:root{
+  --bg:#0b0f17;
+  --card:#111827;
+  --text:#e5e7eb;
+  --muted:#9ca3af;
+  --line:rgba(255,255,255,.10);
+  --accent:#22c55e;
+  --link:#60a5fa;
+  --shadow:0 10px 25px rgba(0,0,0,.25);
+}
+@media (prefers-color-scheme: light){
+  :root{
+    --bg:#f5f7fb;
+    --card:#ffffff;
+    --text:#0f172a;
+    --muted:#475569;
+    --line:rgba(2,6,23,.12);
+    --accent:#16a34a;
+    --link:#2563eb;
+    --shadow:0 10px 25px rgba(2,6,23,.10);
+  }
+}
+html[data-theme="light"]{
+  --bg:#f5f7fb; --card:#ffffff; --text:#0f172a; --muted:#475569; --line:rgba(2,6,23,.12);
+  --accent:#16a34a; --link:#2563eb; --shadow:0 10px 25px rgba(2,6,23,.10);
+}
+html[data-theme="dark"]{
+  --bg:#0b0f17; --card:#111827; --text:#e5e7eb; --muted:#9ca3af; --line:rgba(255,255,255,.10);
+  --accent:#22c55e; --link:#60a5fa; --shadow:0 10px 25px rgba(0,0,0,.25);
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.55;
+}
+a{color:var(--link); text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:980px; margin:0 auto; padding:24px 16px 56px;}
+.topbar{
+  display:flex; align-items:center; justify-content:space-between;
+  gap:12px; padding:10px 12px; border:1px solid var(--line);
+  background:rgba(255,255,255,.02); border-radius:14px; box-shadow:var(--shadow);
+  position:sticky; top:12px; backdrop-filter: blur(8px);
+}
+.brand{display:flex; align-items:center; gap:10px; min-width:0}
+.badge{
+  display:inline-flex; align-items:center; gap:8px;
+  padding:6px 10px; border-radius:999px; border:1px solid var(--line);
+  background:rgba(34,197,94,.10); color:var(--text); font-weight:700; font-size:12px;
+}
+.badge .dot{width:8px; height:8px; border-radius:999px; background:var(--accent)}
+.navlinks{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end}
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  padding:8px 10px; border-radius:10px; border:1px solid var(--line);
+  background:rgba(255,255,255,.03); color:var(--text);
+  cursor:pointer; font-weight:600; font-size:14px;
+}
+.btn:hover{background:rgba(255,255,255,.06); text-decoration:none}
+h1{font-size:26px; margin:18px 0 6px}
+.lead{color:var(--muted); margin:0 0 18px}
+.grid{display:grid; grid-template-columns:1fr; gap:14px}
+@media (min-width: 860px){
+  .grid{grid-template-columns: 1fr 1fr;}
+}
+.card{
+  border:1px solid var(--line);
+  background:var(--card);
+  border-radius:16px;
+  padding:16px;
+  box-shadow:var(--shadow);
+}
+.k{
+  display:inline-block;
+  padding:2px 10px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  background:rgba(34,197,94,.10);
+  font-weight:700;
+  font-size:12px;
+}
+.muted{color:var(--muted)}
+hr.sep{border:0; border-top:1px solid var(--line); margin:16px 0}
+blockquote{
+  margin:0; padding:12px 14px;
+  border-left:4px solid var(--accent);
+  background:rgba(34,197,94,.06);
+  border-radius:12px;
+}
+.small{font-size:13px}
+</style>
+  <!-- Contador de visitas (GoatCounter) -->
+  <script
+    data-goatcounter="https://privadalucania.goatcounter.com/count"
+    async
+    src="https://gc.zgo.at/count.js">
+  </script>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand">
+        <span class="badge"><span class="dot"></span> Reglamento · Artículo EST-21</span>
+        <a class="btn" href="../index.html" title="Volver al índice">← Índice</a>
+      </div>
+      <div class="navlinks">
+        <a class="btn" href="../docs/REGLAMNETO%20LUCANIA%20(Vigente).pdf" target="_blank" rel="noopener">📄 Reglamento (PDF)</a>
+        <a class="btn" href="../docs/TABULADOR%20DE%20SANCIONES%20LUCANIA%202024-2025.pdf" target="_blank" rel="noopener">📑 Tabulador</a>
+        <button class="btn" onclick="window.__themeCycle()">
+          🌗 Tema: <span id="themeLabel">Auto</span>
+        </button>
+      </div>
+    </div>
+
+    <h1>Prohibido estacionarse junto a las banquetas de entrada y salida</h1>
+    <p class="lead">Texto original + explicación en lenguaje sencillo, con ejemplos.</p>
+
+    <div class="grid">
+      <section class="card">
+        <h2 style="margin:0 0 8px;">Texto original</h2>
+        <blockquote class="small">«Queda estrictamente prohibido estacionarse junto a las banquetas de la entrada y salida del condominio.»</blockquote>
+        <p class="muted small" style="margin:10px 0 0;">
+          Este texto se muestra tal cual aparece en el reglamento, para consulta.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2 style="margin:0 0 8px;">Interpretación (lenguaje sencillo)</h2>
+        <p style="margin:0;">No se debe estacionar en las zonas de entrada/salida (junto a las banquetas) porque se bloquea la circulación, se reduce visibilidad y se dificulta el paso de emergencias o de otros vehículos.</p>
+      </section>
+    </div>
+
+    <section class="card" style="margin-top:14px;">
+      <h2 style="margin:0 0 8px;">Ejemplos y escenarios</h2>
+      <ul style="margin:0; padding-left:18px;">
+        <li>✅ Si tu cajón está ocupado, estaciona fuera del condominio o acomoda tus vehículos dentro de tu espacio asignado.</li><li>❌ Dejar el coche “solo 5 minutos” en la entrada para bajar cosas.</li><li>❌ Estacionarte en la salida mientras esperas a alguien.</li><li>Si necesitas carga/descarga, hazlo rápido sin obstruir y reubica el vehículo de inmediato.</li>
+      </ul>
+    </section>
+
+    <section class="card" style="margin-top:14px;">
+  <h2 style="margin:0 0 8px;">Sanción aplicable</h2>
+  <p style="margin:0 0 8px;">
+    <span class="k">Nivel: MEDIO</span>
+    <span class="muted">· Caso relacionado: Obstruir o estorbar las vías de tránsito del estacionamiento.</span>
+  </p>
+  <ul style="margin:0; padding-left:18px;">
+    <li><strong>1ª sanción:</strong> $1,500.00</li>
+    <li><strong>2ª sanción:</strong> $3,000.00</li>
+    <li><strong>3ª sanción:</strong> $4,500.00</li>
+  </ul>
+  <p class="muted" style="margin:10px 0 0;">
+    Nota: En caso de reincidencia, las sanciones pueden elevarse al doble y al triple.
+  </p>
+</section>
+
+    <section class="card" style="margin-top:14px;">
+      <h2 style="margin:0 0 8px;">Aviso</h2>
+      <p class="muted" style="margin:0;">
+        La “interpretación” y los ejemplos son una guía para facilitar la comprensión.
+        En caso de conflicto, prevalece el texto del reglamento y los acuerdos vigentes del condominio.
+      </p>
+    </section>
+
+    <hr class="sep">
+    <p class="muted small" style="margin:0;">
+      Privada Lucania · Sitio informativo del reglamento.
+    </p>
+  </div>
+
+  <script>
+(function(){
+  const root = document.documentElement;
+  const key = "lucania-theme";
+  function apply(v){
+    if(v==="auto"){ root.removeAttribute("data-theme"); }
+    else{ root.setAttribute("data-theme", v); }
+  }
+  function cycle(){
+    const cur = localStorage.getItem(key) || "auto";
+    const next = cur==="auto" ? "dark" : (cur==="dark" ? "light" : "auto");
+    localStorage.setItem(key, next);
+    apply(next);
+    label();
+  }
+  function label(){
+    const cur = localStorage.getItem(key) || "auto";
+    const map = {auto:"Auto", dark:"Oscuro", light:"Claro"};
+    const el = document.getElementById("themeLabel");
+    if(el) el.textContent = map[cur] || "Auto";
+  }
+  window.__themeCycle = cycle;
+  apply(localStorage.getItem(key) || "auto");
+  window.addEventListener("DOMContentLoaded", label);
+})();
+</script>
+</body>
+</html>
