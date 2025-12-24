@@ -17,5 +17,124 @@
     .btn{ padding:10px 12px; border-radius:12px; border:1px solid var(--line); background:rgba(0,0,0,.03); color:var(--text); cursor:pointer; text-decoration:none; display:inline-flex; align-items:center; gap:8px; white-space:nowrap; }
     [data-theme="dark"] .btn{ background:rgba(255,255,255,.04); }
     main{ padding:18px; }
-    .grid{ display:grid; grid-template-colu
-::contentReference[oaicite:0]{index=0}
+    .grid{ display:grid; grid-template-columns:repeat(12,1fr); gap:14px; }
+    .card{ grid-column:span 12; background:rgba(0,0,0,.02); border:1px solid var(--line); border-radius:16px; padding:14px; }
+    [data-theme="dark"] .card{ background:rgba(255,255,255,.03); }
+    h1{ margin:0; font-size:20px; }
+    .muted{ color:var(--muted); }
+    .k{ display:inline-block; font-size:12px; padding:2px 8px; border-radius:999px; border:1px solid rgba(47,191,113,.22); background:rgba(47,191,113,.12); }
+    blockquote{ margin:0; padding:12px 12px; border-left:4px solid var(--accent); background:rgba(0,0,0,.03); border-radius:12px; }
+    [data-theme="dark"] blockquote{ background:rgba(255,255,255,.04); }
+    ul{ margin:8px 0 0; padding-left:18px; }
+    footer{ padding:18px; border-top:1px solid var(--line); color:var(--muted); }
+  </style>
+
+  <!-- Contador de visitas (GoatCounter) -->
+  <script
+    data-goatcounter="https://privadalucania.goatcounter.com/count"
+    async
+    src="https://gc.zgo.at/count.js">
+  </script>
+</head>
+
+<body>
+<header>
+  <div class="wrap">
+    <div class="topbar">
+      <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
+        <a class="btn" href="../index.html">⬅️ Volver al índice</a>
+        <a class="btn" href="../docs/Reglamento_Interno_2024.pdf" target="_blank" rel="noopener">📄 PDF oficial</a>
+        <a class="btn" href="../docs/Tabulador_Sanciones_2024_2025.pdf" target="_blank" rel="noopener">⚖️ Tabulador</a>
+      </div>
+      <div style="display:flex; gap:10px; flex-wrap:wrap;">
+        <button class="btn" type="button" onclick="setTheme('light')">☀️ Claro</button>
+        <button class="btn" type="button" onclick="setTheme('dark')">🌙 Oscuro</button>
+        <button class="btn" type="button" onclick="setTheme('system')">💻 Sistema</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <section class="card">
+      <div class="muted"><span class="k">PE-02</span> · Tema: <span class="k">Propiedad exclusiva</span></div>
+      <h1 style="margin-top:8px;">Responsabilidad del propietario sobre ocupantes, visitantes y proveedores</h1>
+      <p class="muted" style="margin:8px 0 0;">Referencia: Reglamento Interno 2024 · Privada Lucania</p>
+    </section>
+
+    <div class="grid" style="margin-top:14px;">
+      <section class="card">
+        <h2 style="margin:0 0 8px;">Texto original (literal)</h2>
+        <blockquote>
+          2. El propietario será responsable de la conducta de sus ocupantes, visitantes y proveedores.
+        </blockquote>
+      </section>
+
+      <section class="card">
+        <h2 style="margin:0 0 8px;">Interpretación en lenguaje sencillo</h2>
+        <p style="margin:0;">
+          Si alguien entra por tu autorización (familia, inquilinos, visitas, proveedores, trabajadores), tú como propietario
+          eres responsable de que respeten el reglamento y de los daños o molestias que puedan causar.
+        </p>
+        <ul>
+          <li><strong>Clave:</strong> “No fui yo” no elimina la responsabilidad si la persona ingresó por tu permiso.</li>
+          <li><strong>Recomendación:</strong> informa a tus visitas/proveedores sobre reglas básicas (estacionamiento, ruido, basura, áreas comunes).</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2 style="margin:0 0 8px;">Ejemplos y escenarios</h2>
+        <ul>
+          <li><strong>✅ Sí aplica:</strong> un proveedor rompe algo en un área común; el propietario responde por la reparación o procedimiento que defina la administración.</li>
+          <li><strong>✅ Sí aplica:</strong> una visita se estaciona en lugar prohibido; el propietario debe apoyar a corregir y asumir consecuencias si corresponde.</li>
+          <li><strong>✅ Sí aplica:</strong> un trabajador hace ruido fuera de horario; el propietario debe detenerlo y regularizar la situación.</li>
+          <li><strong>⚠️ Caso común:</strong> “solo vino un momento”. Aunque sea poco tiempo, si hubo infracción, sigue siendo responsabilidad del propietario.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2 style="margin:0 0 8px;">Sanción aplicable</h2>
+
+        <p style="margin:0 0 8px;">
+          <span class="k">Estado: Depende de la infracción</span>
+        </p>
+
+        <p class="muted" style="margin:0;">
+          Este artículo establece la <strong>responsabilidad</strong> del propietario. La sanción aplicable se determina por el
+          <strong>tipo de infracción</strong> cometida (ruido, estacionamiento, daños, mascotas, etc.) conforme al Tabulador de Sanciones.
+        </p>
+      </section>
+
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    Interpretaciones y ejemplos: orientativos. El texto original del reglamento es la referencia principal.
+  </div>
+</footer>
+
+<script>
+  const root = document.documentElement;
+  function applyTheme(theme){
+    if(theme === 'dark'){ root.setAttribute('data-theme','dark'); }
+    else if(theme === 'light'){ root.removeAttribute('data-theme'); }
+    else{
+      root.removeAttribute('data-theme');
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        root.setAttribute('data-theme','dark');
+      }
+    }
+  }
+  function setTheme(theme){ localStorage.setItem('theme', theme); applyTheme(theme); }
+  applyTheme(localStorage.getItem('theme') || 'system');
+  if (window.matchMedia) {
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+      if ((localStorage.getItem('theme') || 'system') === 'system') applyTheme('system');
+    });
+  }
+</script>
+</body>
+</html>
