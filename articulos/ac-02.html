@@ -23,10 +23,13 @@
     h1{ margin:0; font-size:20px; }
     .muted{ color:var(--muted); }
     .k{ display:inline-block; font-size:12px; padding:2px 8px; border-radius:999px; border:1px solid rgba(47,191,113,.22); background:rgba(47,191,113,.12); }
-    blockquote{ margin:0; padding:12px; border-left:4px solid var(--accent); background:rgba(0,0,0,.03); border-radius:12px; white-space:pre-line; }
+    blockquote{ margin:0; padding:12px 12px; border-left:4px solid var(--accent); background:rgba(0,0,0,.03); border-radius:12px; white-space:pre-line; }
+    [data-theme="dark"] blockquote{ background:rgba(255,255,255,.04); }
+    ul{ margin:8px 0 0; padding-left:18px; }
     footer{ padding:18px; border-top:1px solid var(--line); color:var(--muted); }
   </style>
 
+  <!-- Contador de visitas (GoatCounter) -->
   <script
     data-goatcounter="https://privadalucania.goatcounter.com/count"
     async
@@ -38,10 +41,15 @@
 <header>
   <div class="wrap">
     <div class="topbar">
-      <div>
+      <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
         <a class="btn" href="../index.html">⬅️ Volver al índice</a>
-        <a class="btn" href="../docs/Reglamento_Interno_2024.pdf" target="_blank">📄 PDF oficial</a>
-        <a class="btn" href="../docs/Tabulador_Sanciones_2024_2025.pdf" target="_blank">⚖️ Tabulador</a>
+        <a class="btn" href="../docs/Reglamento_Interno_2024.pdf" target="_blank" rel="noopener">📄 PDF oficial</a>
+        <a class="btn" href="../docs/Tabulador_Sanciones_2024_2025.pdf" target="_blank" rel="noopener">⚖️ Tabulador</a>
+      </div>
+      <div style="display:flex; gap:10px; flex-wrap:wrap;">
+        <button class="btn" type="button" onclick="setTheme('light')">☀️ Claro</button>
+        <button class="btn" type="button" onclick="setTheme('dark')">🌙 Oscuro</button>
+        <button class="btn" type="button" onclick="setTheme('system')">💻 Sistema</button>
       </div>
     </div>
   </div>
@@ -52,54 +60,90 @@
     <section class="card">
       <div class="muted"><span class="k">AC-02</span> · Tema: <span class="k">Áreas comunes</span></div>
       <h1 style="margin-top:8px;">Renuncia de uso no exime obligaciones</h1>
+      <p class="muted" style="margin:8px 0 0;">Referencia: Reglamento Interno 2024 · Privada Lucania</p>
     </section>
 
-    <section class="card" style="margin-top:14px;">
-      <h2>Texto original (literal)</h2>
-      <blockquote>
-Cuando un condómino no ejerza sus derechos o renuncie a usar determinadas áreas comunes,
+    <div class="grid" style="margin-top:14px;">
+      <section class="card">
+        <h2 style="margin:0 0 8px;">Texto original (literal)</h2>
+        <blockquote>
+1. Cuando un condómino no ejerza sus derechos o renuncie a usar determinadas áreas comunes,
 seguirá sujeto a las obligaciones que le imponen la Ley en propiedad condominal, la escritura
 constitutiva, el reglamento y las demás disposiciones legales aplicables.
-      </blockquote>
-    </section>
+        </blockquote>
+      </section>
 
-    <section class="card">
-      <h2>Interpretación en lenguaje sencillo</h2>
-      <p>
-        Aunque un condómino decida no usar alguna área común (por ejemplo, alberca, pérgola o jardines),
-        esto <strong>no lo libera</strong> de sus obligaciones legales y reglamentarias, incluyendo pagos,
-        cumplimiento de reglas y respeto a las decisiones del condominio.
-      </p>
-    </section>
+      <section class="card">
+        <h2 style="margin:0 0 8px;">Interpretación en lenguaje sencillo</h2>
+        <p style="margin:0;">
+          Aunque un condómino decida <strong>no usar</strong> alguna área común (alberca, pérgola, jardines, etc.),
+          eso <strong>no lo libera</strong> de sus obligaciones: seguir cumpliendo el reglamento, la escritura constitutiva,
+          las disposiciones legales aplicables y las obligaciones que correspondan (por ejemplo, cuotas y reglas de convivencia).
+        </p>
+        <ul>
+          <li><strong>En sencillo:</strong> “no lo uso” ≠ “no me aplica”.</li>
+          <li><strong>También aplica:</strong> a inquilinos y habitantes, en lo que les corresponda por el reglamento.</li>
+        </ul>
+      </section>
 
-    <section class="card">
-      <h2>Ejemplos y escenarios</h2>
-      <ul>
-        <li><strong>❌ Incorrecto:</strong> “No uso la alberca, no debo pagar mantenimiento”.</li>
-        <li><strong>❌ Incorrecto:</strong> “Nunca voy a la pérgola, no me aplican sus reglas”.</li>
-        <li><strong>✅ Correcto:</strong> aunque no se use un área común, se siguen cumpliendo todas las obligaciones.</li>
-      </ul>
-    </section>
+      <section class="card">
+        <h2 style="margin:0 0 8px;">Ejemplos y escenarios</h2>
+        <ul>
+          <li><strong>❌ Incorrecto:</strong> “No uso la alberca, entonces no pago mantenimiento”.</li>
+          <li><strong>❌ Incorrecto:</strong> “Nunca voy a la pérgola, entonces puedo ignorar sus reglas o acuerdos”.</li>
+          <li><strong>✅ Correcto:</strong> no usar un área común es decisión personal, pero las obligaciones siguen vigentes.</li>
+          <li><strong>⚠️ Caso común:</strong> “Yo no uso nada” → aun así se debe respetar el reglamento y los acuerdos del condominio.</li>
+        </ul>
+      </section>
 
-    <section class="card">
-      <h2>Sanción aplicable</h2>
-      <p>
-        <span class="k">Nivel: ALTO</span>
-        · Incumplimiento reiterado del reglamento.
-      </p>
-      <ul>
-        <li>$1,500 — 1ª sanción</li>
-        <li>$3,000 — 2ª sanción</li>
-        <li>$4,500 — 3ª sanción</li>
-      </ul>
-    </section>
+      <section class="card">
+        <h2 style="margin:0 0 8px;">Sanción aplicable</h2>
+
+        <p style="margin:0 0 8px;">
+          <span class="k">Nivel: ALTO</span>
+          <span class="muted">· Caso: No cumplir de forma reiterada cualquier otro artículo del reglamento.</span>
+        </p>
+
+        <ul style="margin:0; padding-left:18px;">
+          <li><strong>1ª sanción:</strong> $1,500.00</li>
+          <li><strong>2ª sanción:</strong> $3,000.00</li>
+          <li><strong>3ª sanción:</strong> $4,500.00</li>
+        </ul>
+
+        <p class="muted" style="margin:10px 0 0;">
+          Nota: La “renuncia de uso” no elimina obligaciones. Si además hay incumplimientos concretos (ruido, daños, mal uso),
+          aplican las sanciones específicas del Tabulador según el caso.
+        </p>
+      </section>
+    </div>
   </div>
 </main>
 
 <footer>
   <div class="wrap">
-    Interpretaciones orientativas. El texto original del reglamento es la referencia principal.
+    Interpretaciones y ejemplos: orientativos. El texto original del reglamento es la referencia principal.
   </div>
 </footer>
+
+<script>
+  const root = document.documentElement;
+  function applyTheme(theme){
+    if(theme === 'dark'){ root.setAttribute('data-theme','dark'); }
+    else if(theme === 'light'){ root.removeAttribute('data-theme'); }
+    else{
+      root.removeAttribute('data-theme');
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        root.setAttribute('data-theme','dark');
+      }
+    }
+  }
+  function setTheme(theme){ localStorage.setItem('theme', theme); applyTheme(theme); }
+  applyTheme(localStorage.getItem('theme') || 'system');
+  if (window.matchMedia) {
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+      if ((localStorage.getItem('theme') || 'system') === 'system') applyTheme('system');
+    });
+  }
+</script>
 </body>
 </html>
