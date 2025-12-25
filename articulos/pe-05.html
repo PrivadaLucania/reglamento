@@ -23,47 +23,22 @@
 
 <body>
 
-<header class="border-bottom" style="border-color: var(--line) !important;">
-  <div class="container py-3">
-    <div class="d-flex flex-wrap gap-2 justify-content-between align-items-center">
-
-      <div class="d-flex flex-wrap gap-2 align-items-center">
-        <a class="btn btn-outline-secondary" href="../index.html">← Volver al índice</a>
-        <a class="btn btn-outline-secondary" href="../docs/Reglamento_Interno_2024.pdf" target="_blank" rel="noopener">PDF oficial</a>
-        <a class="btn btn-outline-secondary" href="../docs/Tabulador_Sanciones_2024_2025.pdf" target="_blank" rel="noopener">Tabulador</a>
-      </div>
-
-      <div class="d-flex flex-wrap gap-2 align-items-center">
-        <button class="btn btn-outline-secondary" type="button" onclick="setTheme('light')">
-          <span class="dot dot--light" aria-hidden="true"></span> Claro
-        </button>
-        <button class="btn btn-outline-secondary" type="button" onclick="setTheme('dark')">
-          <span class="dot dot--dark" aria-hidden="true"></span> Oscuro
-        </button>
-        <button class="btn btn-outline-secondary" type="button" onclick="setTheme('system')">
-          Sistema
-        </button>
-      </div>
-
+<nav class="navbar navbar-expand-lg navbar-dark bg-success">
+  <div class="container">
+    <a class="navbar-brand fw-semibold" href="../index.html">Privada Lucania · Reglamento Interno</a>
+    <div class="ms-auto d-flex gap-2">
+      <a class="btn btn-sm btn-outline-light" href="../docs/Reglamento_Interno_2024.pdf" target="_blank" rel="noopener">PDF</a>
+      <a class="btn btn-sm btn-outline-light" href="../docs/Tabulador_Sanciones_2024_2025.pdf" target="_blank" rel="noopener">Tabulador</a>
     </div>
   </div>
-</header>
+</nav>
 
 <main class="container my-4">
 
-  <!-- Encabezado -->
+  <!-- Encabezado (igual estilo que PE-04: hero + título simple + meta) -->
   <section class="hero p-4 mb-4">
-    <div class="d-flex flex-column gap-1">
-      <div class="meta">
-        <span class="badge badge-soft rounded-pill px-3 py-2">PE-05</span>
-        <span class="ms-2 badge badge-soft rounded-pill px-3 py-2">Propiedad exclusiva</span>
-        <span class="ms-2 meta">· Página 1 del PDF oficial</span>
-      </div>
-      <h1 class="h4 fw-bold mb-0">Prohibición de destinar la vivienda a usos contrarios a su destino (habitacional)</h1>
-      <p class="mb-0" style="opacity:.95;">
-        Referencia: Reglamento Interno 2024 · Privada Lucania
-      </p>
-    </div>
+    <h1 class="h4 fw-bold mb-1">PE-05 — Uso contrario al habitacional</h1>
+    <p class="mb-0"><span class="meta">Página 1 del PDF oficial</span></p>
   </section>
 
   <div class="row g-3">
@@ -155,12 +130,8 @@
 
 </main>
 
-<footer class="border-top py-3 mt-4" style="border-color: var(--line) !important;">
-  <div class="container">
-    <div class="text-secondary small">
-      Interpretaciones y ejemplos: orientativos. El texto original del reglamento es la referencia principal.
-    </div>
-  </div>
+<footer class="bg-dark text-white text-center py-3 mt-4">
+  <p class="mb-0">&copy; 2025 Privada Lucania</p>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
