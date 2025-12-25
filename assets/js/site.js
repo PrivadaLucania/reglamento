@@ -1,11 +1,15 @@
 // assets/js/site.js
+// Privada Lucania — Reglamento Interno 2024
+// Bootstrap 5.3 + tema claro/oscuro/sistema + buscador (solo si existe #q)
 
 (function () {
   "use strict";
 
-  // ====== helpers ======
-  function $(sel, root = document) { return root.querySelector(sel); }
-  function $all(sel, root = document) { return Array.from(root.querySelectorAll(sel)); }
+  const root = document.documentElement;
+
+  // ====== Helpers ======
+  function $(sel, ctx = document) { return ctx.querySelector(sel); }
+  function $all(sel, ctx = document) { return Array.from(ctx.querySelectorAll(sel)); }
 
   function normalize(s){
     return (s || "")
@@ -14,40 +18,52 @@
       .replace(/[\u0300-\u036f]/g, ""); // quita acentos
   }
 
-  // ====== Theme (light/dark/system) ======
-  const root = document.documentElement;
+  // ====== Theme handling ======
+  // - Tu CSS: usa data-theme="dark" para variables/superficies propias
+  // - Bootstrap: usa data-bs-theme="dark|light"
+  function setBootstrapTheme(mode){
+    // mode: "dark" | "light"
+    root.setAttribute("data-bs-theme", mode);
+  }
 
-function applyTheme(theme){
-  if(theme === "dark"){
-    root.setAttribute("data-theme","dark");      // tus variables
-    root.setAttribute("data-bs-theme","dark");   // bootstrap
-  } else if(theme === "light"){
-    root.removeAttribute("data-theme");          // tus variables (claro)
-    root.setAttribute("data-bs-theme","light");  // bootstrap
-  } else {
+  function applyTheme(theme){
+    if(theme === "dark"){
+      root.setAttribute("data-theme","dark");
+      setBootstrapTheme("dark");
+      return;
+    }
+
+    if(theme === "light"){
+      root.removeAttribute("data-theme");
+      setBootstrapTheme("light");
+      return;
+    }
+
     // system
     root.removeAttribute("data-theme");
-    root.removeAttribute("data-bs-theme");
-    if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+
+    const prefersDark = window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+    if (prefersDark) {
       root.setAttribute("data-theme","dark");
-      root.setAttribute("data-bs-theme","dark");
+      setBootstrapTheme("dark");
     } else {
-      root.setAttribute("data-bs-theme","light");
+      setBootstrapTheme("light");
     }
   }
-}
 
-  
-
-  // expone setTheme global para onclick en HTML
+  // Exponer global para tus onclick
   window.setTheme = function setTheme(theme){
     localStorage.setItem("theme", theme);
     applyTheme(theme);
   };
 
+  // Cargar tema guardado
   const savedTheme = localStorage.getItem("theme") || "system";
   applyTheme(savedTheme);
 
+  // Reaccionar a cambios del sistema si está en "system"
   if (window.matchMedia) {
     window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
       if ((localStorage.getItem("theme") || "system") === "system") {
@@ -56,9 +72,9 @@ function applyTheme(theme){
     });
   }
 
-  // ====== Search (solo si existe #q y tarjetas .card) ======
+  // ====== Search (solo para páginas que lo tengan) ======
   const q = $("#q");
-  const cards = $all(".card");
+  const cards = $all("[data-topic]"); // más flexible que .card
 
   function runSearch(){
     if(!q || cards.length === 0) return;
@@ -67,32 +83,45 @@ function applyTheme(theme){
 
     cards.forEach(card => {
       const topic = normalize(card.getAttribute("data-topic") || "");
-      const lis = $all("li", card);
+      // buscamos elementos que se oculten (li o cualquier item)
+      const items = $all("li", card);
+
+      // Si no hay <li>, intentamos con links directos
+      const nodes = items.length ? items : $all("a", card);
 
       let anyVisible = false;
 
-      lis.forEach(li => {
-        const text = normalize(li.textContent);
+      nodes.forEach(node => {
+        const text = normalize(node.textContent);
         const match = !term || topic.includes(term) || text.includes(term);
-        li.classList.toggle("hidden", !match);
+        node.classList.toggle("d-none", !match);
         if (match) anyVisible = true;
       });
 
-      // Si ninguna línea quedó visible, ocultamos toda la tarjeta
-      card.classList.toggle("hidden", !anyVisible);
+      // Oculta el bloque completo si nada coincide
+      card.classList.toggle("d-none", !anyVisible);
     });
   }
 
   if(q){
     q.addEventListener("input", runSearch);
+
+    // Atajo: "/" para enfocar el buscador (solo si no estás escribiendo en un input)
+    document.addEventListener("keydown", (e) => {
+      const tag = (e.target && e.target.tagName) ? e.target.tagName.toLowerCase() : "";
+      const typing = tag === "input" || tag === "textarea" || (e.target && e.target.isContentEditable);
+
+      if (!typing && e.key === "/") {
+        e.preventDefault();
+        q.focus();
+      }
+    });
   }
 
-  // ====== Optional: auto-focus search on "/" ======
-  document.addEventListener("keydown", (e) => {
-    if (!q) return;
-    if (e.key === "/" && (e.target === document.body || e.target === document.documentElement)) {
-      e.preventDefault();
-      q.focus();
-    }
-  });
+  // ====== (Opcional) Marcar link activo en navbar si aplica ======
+  // Si luego agregas más links, puedes reutilizarlo:
+  // const path = location.pathname.split("/").pop() || "index.html";
+  // $all(".navbar a.nav-link").forEach(a => {
+  //   if ((a.getAttribute("href") || "").endsWith(path)) a.classList.add("active");
+  // });
 })();
