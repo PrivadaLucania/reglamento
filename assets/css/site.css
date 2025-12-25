@@ -1,159 +1,174 @@
-/* assets/css/site.css */
+/* assets/css/site.css
+   Sitio: Reglamento Interno 2024 — Privada Lucania
+   Stack: Bootstrap 5.3 + estilos propios (marca Lucania + tema claro/oscuro)
+*/
 
 /* =========================
-   Tema por defecto: CLARO
+   Tokens (marca / tema)
    ========================= */
 :root{
-  --bg: #ffffff;
-  --card: #f4f6fa;
-  --text: #0b1220;
-  --muted: #4a5568;
-  --accent: #2fbf71;
-  --line: rgba(0,0,0,.12);
+  /* Marca (igual a tu página principal) */
+  --luc-green-1:#198754;
+  --luc-green-2:#157347;
+
+  /* Superficies / texto (modo claro) */
+  --bg:#f6f7f9;
+  --surface:#ffffff;
+  --text:#0b1220;
+  --muted:#6c757d;
+  --line:rgba(0,0,0,.12);
+
+  /* Sombras / radios */
+  --shadow:0 10px 30px rgba(0,0,0,.06);
+  --radius-xl:1rem;
+  --radius-lg:.75rem;
+
+  /* Acentos suaves (badges, tags) */
+  --soft-bg: rgba(25,135,84,.12);
+  --soft-br: rgba(25,135,84,.25);
+  --soft-fg: #198754;
 }
 
-/* Tema oscuro */
+/* Modo oscuro (para tus componentes propios).
+   Bootstrap se controla aparte con data-bs-theme en JS. */
 [data-theme="dark"]{
   --bg:#0b1220;
-  --card:#0f1b33;
+  --surface:#0f1b33;
   --text:#e7eefc;
   --muted:#a9b7d6;
-  --accent:#35c26b;
-  --line:rgba(255,255,255,.08);
+  --line:rgba(255,255,255,.10);
+
+  --shadow:0 10px 30px rgba(0,0,0,.35);
+
+  /* Mantiene el verde de marca */
+  --soft-bg: rgba(25,135,84,.18);
+  --soft-br: rgba(25,135,84,.35);
+  --soft-fg: #7ae2a7;
 }
 
+/* =========================
+   Base
+   ========================= */
 *{ box-sizing:border-box; }
 
 body{
-  margin:0;
-  font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial;
   background: var(--bg);
   color: var(--text);
 }
 
-header{
-  padding:28px 18px 18px;
-  border-bottom:1px solid var(--line);
-}
-
-.wrap{ max-width:980px; margin:0 auto; }
-
-h1{ margin:0 0 6px; font-size:26px; }
-.sub{ color:var(--muted); margin:0; line-height:1.4; }
-
-.toolbar{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-  margin-top:16px;
-  align-items:stretch;
-}
-
-.search{ flex:1; min-width:240px; }
-
-input{
-  width:100%;
-  padding:12px 12px;
-  border-radius:12px;
-  border:1px solid var(--line);
-  background: rgba(0,0,0,.03);
-  color: var(--text);
-  outline:none;
-}
-
-[data-theme="dark"] input{ background: rgba(255,255,255,.04); }
-
-input::placeholder{ color: rgba(11,18,32,.55); }
-[data-theme="dark"] input::placeholder{ color: rgba(231,238,252,.55); }
-
-.btn{
-  padding:12px 14px;
-  border-radius:12px;
-  border:1px solid var(--line);
-  background: rgba(0,0,0,.03);
-  color: var(--text);
-  cursor:pointer;
-  text-decoration:none;
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  user-select:none;
-  white-space:nowrap;
-}
-
-[data-theme="dark"] .btn{ background: rgba(255,255,255,.04); }
-.btn:hover{ filter: brightness(0.98); }
-
-main{ padding:18px; }
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(12,1fr);
-  gap:14px;
-}
-
-.card{
-  grid-column:span 12;
-  background: rgba(0,0,0,.02);
-  border:1px solid var(--line);
-  border-radius:16px;
-  padding:14px 14px 10px;
-}
-[data-theme="dark"] .card{ background: rgba(255,255,255,.03); }
-
-@media(min-width:800px){
-  .card{ grid-column:span 6; }
-}
-
-h2{ margin:0 0 8px; font-size:16px; }
-
-ul{ margin:0; padding-left:18px; }
-
-li{ margin:6px 0; color:var(--muted); }
-
-a{ color:var(--text); text-decoration:none; }
+/* Mantener consistencia con links (Bootstrap ya maneja mucho, esto es un toque) */
+a{ text-decoration:none; }
 a:hover{ text-decoration:underline; }
 
-.tag{
-  display:inline-block;
-  font-size:12px;
-  padding:2px 8px;
-  border-radius:999px;
-  background: rgba(47,191,113,.12);
-  border:1px solid rgba(47,191,113,.22);
-  color: var(--text);
-  margin-left:8px;
+/* =========================
+   Hero (igual al estilo que compartiste)
+   ========================= */
+.hero{
+  background: linear-gradient(90deg, var(--luc-green-1), var(--luc-green-2));
+  color:#fff;
+  border-radius: var(--radius-xl);
 }
-
-.note{
-  margin-top:10px;
-  font-size:13px;
-  color: rgba(11,18,32,.7);
-}
-[data-theme="dark"] .note{ color: rgba(231,238,252,.7); }
-
-footer{
-  padding:20px 18px;
-  color:var(--muted);
-  border-top:1px solid var(--line);
-}
-
-.hidden{ display:none; }
 
 /* =========================
-   Indicadores de tema
+   Tarjetas del índice (home)
+   ========================= */
+.topic-card{
+  background: var(--surface);
+  border: 0;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow);
+  padding: 1rem;
+}
+
+/* Titulito + badge */
+.section-title{
+  display:flex;
+  gap:.5rem;
+  align-items:center;
+}
+
+/* Badge suave (mismo estilo de tu sitio principal) */
+.badge-soft{
+  background: var(--soft-bg);
+  color: var(--soft-fg);
+  border: 1px solid var(--soft-br);
+}
+
+/* Listas dentro de cards */
+.topic-card ul{ margin:0; padding:0; }
+.topic-card li{ margin:.35rem 0; }
+
+/* Los links de artículos heredan color; el texto secundario lo pone Bootstrap (text-secondary) */
+.topic-card a{ color: inherit; }
+
+/* =========================
+   Buscador (Bootstrap aporta form-control; esto es solo afinado)
+   ========================= */
+#q::placeholder{
+  opacity:.85;
+}
+
+/* =========================
+   Indicadores de tema (cuadraditos)
    ========================= */
 .dot{
   width:10px;
   height:10px;
   display:inline-block;
-  border-radius:999px; /* círculo por defecto */
-  border:1px solid var(--line);
-  background: transparent;
+  border-radius:3px; /* cuadrado redondeado */
+  border:1px solid rgba(0,0,0,.20);
+  background:transparent;
+}
+
+[data-theme="dark"] .dot{
+  border:1px solid rgba(255,255,255,.22);
 }
 
 .dot--light{ background:#ffffff; }
 .dot--dark{ background:#0b1220; }
 
-/* Usa esta clase extra si quieres cuadrado */
-.dot--square{ border-radius:3px; }
+/* =========================
+   Footer
+   ========================= */
+footer{
+  opacity:.95;
+}
+
+/* =========================
+   (Opcional) Estilos reutilizables para páginas de artículos
+   ========================= */
+
+/* Contenedor tipo "card" para bloques de texto (literal/interpretación/etc.) */
+.article-card{
+  background: var(--surface);
+  border:0;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow);
+  padding: 1rem;
+}
+
+/* Caja "texto literal" (puedes usarla luego en artículos) */
+.literal-box{
+  background: rgba(25,135,84,.06);
+  border:1px solid rgba(25,135,84,.18);
+  border-radius: var(--radius-lg);
+  padding: .9rem;
+}
+
+[data-theme="dark"] .literal-box{
+  background: rgba(25,135,84,.12);
+  border:1px solid rgba(25,135,84,.28);
+}
+
+/* Meta/chips (pág. PDF, clave, etc.) */
+.meta{
+  font-size:.9rem;
+  color: var(--muted);
+}
+
+/* Separador suave */
+.hr-soft{
+  border:0;
+  border-top:1px solid var(--line);
+  margin: 1rem 0;
+}
