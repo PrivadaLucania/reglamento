@@ -5,10 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Reglamento Interno 2024 | Privada Lucania</title>
   <meta name="description" content="Índice temático del Reglamento Interno 2024 de Privada Lucania." />
+
   <link rel="icon" href="assets/icons/favicon.png" />
+
+  <!-- Bootstrap (mismos colores/estilo base que tu sitio principal) -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+
+  <!-- Tu CSS del sitio -->
   <link rel="stylesheet" href="assets/css/site.css">
-  
+
   <!-- Contador de visitas (GoatCounter) -->
   <script
     data-goatcounter="https://privadalucania.goatcounter.com/count"
@@ -18,48 +23,96 @@
 </head>
 
 <body>
-<header>
-  <div class="wrap">
-    <h1>Reglamento Interno 2024 — Privada Lucania</h1>
-    <p class="sub">
-      Índice temático con acceso directo a cada disposición (DG y artículos).
-      En cada artículo verás: <strong>texto original</strong>, <strong>interpretación</strong>, <strong>ejemplos</strong> y <strong>sanción aplicable</strong>.
-    </p>
 
-    <div class="toolbar">
-      <div class="search">
-        <input id="q" type="search" placeholder="Buscar por palabra (ej. 'alberca', 'mascotas', 'música', 'estacionamiento')…" />
+<!-- Navbar (mismo estilo que tu página principal) -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-success">
+  <div class="container">
+    <a class="navbar-brand fw-semibold" href="#">
+      Privada Lucania · Reglamento Interno 2024
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain"
+      aria-controls="navMain" aria-expanded="false" aria-label="Menú">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navMain">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="docs/Reglamento_Interno_2024.pdf" target="_blank" rel="noopener">
+            Ver PDF oficial
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="docs/Tabulador_Sanciones_2024_2025.pdf" target="_blank" rel="noopener">
+            Tabulador de sanciones
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main class="container my-4">
+
+  <!-- Hero / Encabezado (colores del archivo que compartiste) -->
+  <section class="hero p-4 p-md-5 mb-4">
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-start gap-3">
+      <div>
+        <h1 class="h3 mb-2 fw-bold">Reglamento Interno 2024 — Privada Lucania</h1>
+        <p class="mb-0">
+          Índice temático con acceso directo a cada disposición (DG y artículos).
+          En cada artículo verás: <strong>texto original</strong>, <strong>interpretación</strong>,
+          <strong>ejemplos</strong> y <strong>sanción aplicable</strong>.
+        </p>
       </div>
 
-      <a class="btn" href="docs/Reglamento_Interno_2024.pdf" target="_blank" rel="noopener">Ver PDF oficial</a>
-      <a class="btn" href="docs/Tabulador_Sanciones_2024_2025.pdf" target="_blank" rel="noopener">Tabulador de sanciones</a>
-
-      <button class="btn" type="button" onclick="setTheme('light')">
-        <span class="dot dot--light"></span> Claro
-      </button>
-      
-      <button class="btn" type="button" onclick="setTheme('dark')">
-        <span class="dot dot--dark"></span> Oscuro
-      </button>
-      
-      <button class="btn" type="button" onclick="setTheme('system')">Sistema</button>
+      <div class="text-md-end">
+        <span class="badge badge-soft rounded-pill px-3 py-2">Índice interactivo</span>
+        <div class="small mt-2 opacity-75">
+          Nota: Los IDs (PE-01, AL-02, etc.) son referencias internas. Entre paréntesis se indica la página del PDF.
+        </div>
+      </div>
     </div>
 
-    <p class="note">
-      Nota: Los IDs (PE-01, AL-02, etc.) son referencias internas para facilitar la consulta digital.
-      Entre paréntesis se indica la página del PDF donde inicia el texto literal.
-    </p>
-  </div>
-</header>
+    <!-- Toolbar -->
+    <div class="row g-2 mt-4 align-items-stretch">
+      <div class="col-12 col-lg">
+        <input id="q" class="form-control form-control-lg"
+               type="search"
+               placeholder="Buscar por palabra (ej. 'alberca', 'mascotas', 'música', 'estacionamiento')…" />
+      </div>
 
-<main>
-  <div class="wrap">
-    <div id="grid" class="grid">
+      <div class="col-12 col-lg-auto d-grid d-lg-block">
+        <button class="btn btn-light btn-lg w-100" type="button" onclick="setTheme('light')">
+          <span class="dot dot--light dot--square"></span> Claro
+        </button>
+      </div>
+      <div class="col-12 col-lg-auto d-grid d-lg-block">
+        <button class="btn btn-dark btn-lg w-100" type="button" onclick="setTheme('dark')">
+          <span class="dot dot--dark dot--square"></span> Oscuro
+        </button>
+      </div>
+      <div class="col-12 col-lg-auto d-grid d-lg-block">
+        <button class="btn btn-outline-light btn-lg w-100" type="button" onclick="setTheme('system')">
+          Sistema
+        </button>
+      </div>
+    </div>
+  </section>
 
-      <!-- PROPIEDAD EXCLUSIVA (editorial) -->
-      <section class="card" data-topic="propiedad exclusiva unidad privativa vender arrendar hipotecar proindiviso remodelaciones horarios rentas vacacionales depósito garantía">
-        <h2>Propiedad exclusiva <span class="tag">PE</span></h2>
-        <ul>
+  <!-- Grid de temas -->
+  <section class="row g-3" id="grid">
+
+    <!-- PROPIEDAD EXCLUSIVA -->
+    <div class="col-12 col-md-6">
+      <section class="topic-card h-100"
+        data-topic="propiedad exclusiva unidad privativa vender arrendar hipotecar proindiviso remodelaciones horarios rentas vacacionales depósito garantía">
+        <div class="section-title mb-2">
+          <h2 class="h6 mb-0 fw-bold">Propiedad exclusiva</h2>
+          <span class="badge badge-soft rounded-pill">PE</span>
+        </div>
+        <ul class="list-unstyled mb-0 small text-secondary">
           <li><a href="articulos/dg-pe.html">DG-PE — Disposición general: derechos del condómino como propietario (pág. 1)</a></li>
           <li><a href="articulos/pe-01.html">PE-01 — Uso habitacional y destino de la vivienda (pág. 1)</a></li>
           <li><a href="articulos/pe-02.html">PE-02 — Uso, goce y disposición de la unidad privativa (pág. 1)</a></li>
@@ -73,11 +126,17 @@
           <li><a href="articulos/pe-10.html">PE-10 — Depósito en garantía por rentas vacacionales (pág. 2)</a></li>
         </ul>
       </section>
+    </div>
 
-      <!-- ÁREAS COMUNES (título formal) -->
-      <section class="card" data-topic="áreas comunes uso goce moroso bienes comunes inventario comité vigilancia administrador">
-        <h2>Áreas comunes <span class="tag">AC</span></h2>
-        <ul>
+    <!-- ÁREAS COMUNES -->
+    <div class="col-12 col-md-6">
+      <section class="topic-card h-100"
+        data-topic="áreas comunes uso goce moroso bienes comunes inventario comité vigilancia administrador">
+        <div class="section-title mb-2">
+          <h2 class="h6 mb-0 fw-bold">Áreas comunes</h2>
+          <span class="badge badge-soft rounded-pill">AC</span>
+        </div>
+        <ul class="list-unstyled mb-0 small text-secondary">
           <li><a href="articulos/dg-ac.html">DG-AC — Disposición general: uso y goce de áreas comunes (pág. 2)</a></li>
           <li><a href="articulos/ac-01.html">AC-01 — Uso de áreas comunes condicionado a no ser moroso (pág. 2)</a></li>
           <li><a href="articulos/ac-02.html">AC-02 — Renuncia de uso no exime obligaciones (pág. 2)</a></li>
@@ -86,11 +145,17 @@
           <li><a href="articulos/ac-05.html">AC-05 — Bienes comunes entre unidades colindantes (pág. 2)</a></li>
         </ul>
       </section>
+    </div>
 
-      <!-- OBRAS (título formal) -->
-      <section class="card" data-topic="obras bienes comunes mantenimiento administración comité vigilancia asamblea 51% fondo gastos cfe agua pública">
-        <h2>Obras en bienes comunes <span class="tag">OB</span></h2>
-        <ul>
+    <!-- OBRAS -->
+    <div class="col-12 col-md-6">
+      <section class="topic-card h-100"
+        data-topic="obras bienes comunes mantenimiento administración comité vigilancia asamblea 51% fondo gastos cfe agua pública">
+        <div class="section-title mb-2">
+          <h2 class="h6 mb-0 fw-bold">Obras en bienes comunes</h2>
+          <span class="badge badge-soft rounded-pill">OB</span>
+        </div>
+        <ul class="list-unstyled mb-0 small text-secondary">
           <li><a href="articulos/dg-ob.html">DG-OB — Disposición general: conservación y mejora de bienes comunes (pág. 3)</a></li>
           <li><a href="articulos/ob-01.html">OB-01 — Obras necesarias con cargo al fondo de mantenimiento (pág. 3)</a></li>
           <li><a href="articulos/ob-02.html">OB-02 — Insuficiencia del fondo y obras no previstas (pág. 3)</a></li>
@@ -98,11 +163,17 @@
           <li><a href="articulos/ob-04.html">OB-04 — Gastos comunes por porcentaje de indiviso (pág. 3)</a></li>
         </ul>
       </section>
+    </div>
 
-      <!-- CONVIVENCIA / USO DE ÁREAS COMUNES (título formal) -->
-      <section class="card" data-topic="convivencia ruido música decibeles 55 negocios lucro oficina servicios brincolines juegos inflables responsabilidad civil">
-        <h2>Uso y convivencia en áreas comunes <span class="tag">UC</span></h2>
-        <ul>
+    <!-- USO / CONVIVENCIA -->
+    <div class="col-12 col-md-6">
+      <section class="topic-card h-100"
+        data-topic="convivencia ruido música decibeles 55 negocios lucro brincolines juegos inflables responsabilidad civil">
+        <div class="section-title mb-2">
+          <h2 class="h6 mb-0 fw-bold">Uso y convivencia en áreas comunes</h2>
+          <span class="badge badge-soft rounded-pill">UC</span>
+        </div>
+        <ul class="list-unstyled mb-0 small text-secondary">
           <li><a href="articulos/dg-uc.html">DG-UC — Disposición general: convivencia y uso responsable (pág. 3)</a></li>
           <li><a href="articulos/uc-01.html">UC-01 — Uso adecuado y responsabilidad en áreas comunes (pág. 3)</a></li>
           <li><a href="articulos/uc-02.html">UC-02 — Ruido y música: límites y horarios permitidos (pág. 3)</a></li>
@@ -111,11 +182,17 @@
           <li><a href="articulos/uc-05.html">UC-05 — Prohibición de juegos inflables y brincolines (pág. 3)</a></li>
         </ul>
       </section>
+    </div>
 
-      <!-- ALBERCA (título formal) -->
-      <section class="card" data-topic="alberca horario traje de baño regadera menores supervisión alimentos bebidas cigarros mascotas mantenimiento tormentas eléctricas">
-        <h2>Área de alberca <span class="tag">AL</span></h2>
-        <ul>
+    <!-- ALBERCA -->
+    <div class="col-12 col-md-6">
+      <section class="topic-card h-100"
+        data-topic="alberca horario traje de baño regadera menores supervisión alimentos bebidas cigarros mascotas mantenimiento tormentas eléctricas">
+        <div class="section-title mb-2">
+          <h2 class="h6 mb-0 fw-bold">Área de alberca</h2>
+          <span class="badge badge-soft rounded-pill">AL</span>
+        </div>
+        <ul class="list-unstyled mb-0 small text-secondary">
           <li><a href="articulos/dg-al.html">DG-AL — Disposición general: uso seguro de la alberca (pág. 4)</a></li>
           <li><a href="articulos/al-01.html">AL-01 — Horario permitido para el uso de la alberca (pág. 4)</a></li>
           <li><a href="articulos/al-02.html">AL-02 — Uso condicionado a no ser moroso (pág. 4)</a></li>
@@ -127,11 +204,17 @@
           <li><a href="articulos/al-08.html">AL-08 — Prohibición de uso durante mantenimiento o tormentas (pág. 4)</a></li>
         </ul>
       </section>
+    </div>
 
-      <!-- PÉRGOLA Y ASADOR (título formal) -->
-      <section class="card" data-topic="pérgola asador horario música ruido limpieza áreas verdes mobiliario baños parrillas carbón fogatas bicicletas patines patinetas vehículos">
-        <h2>Pérgola y asadores <span class="tag">PG</span></h2>
-        <ul>
+    <!-- PÉRGOLA -->
+    <div class="col-12 col-md-6">
+      <section class="topic-card h-100"
+        data-topic="pérgola asador horario música ruido limpieza áreas verdes mobiliario baños parrillas carbón fogatas bicicletas patines patinetas vehículos">
+        <div class="section-title mb-2">
+          <h2 class="h6 mb-0 fw-bold">Pérgola y asadores</h2>
+          <span class="badge badge-soft rounded-pill">PG</span>
+        </div>
+        <ul class="list-unstyled mb-0 small text-secondary">
           <li><a href="articulos/dg-pg.html">DG-PG — Disposición general: convivencia y cuidado de instalaciones (pág. 4)</a></li>
           <li><a href="articulos/pg-01.html">PG-01 — Horario y control de ruido en pérgola (pág. 4)</a></li>
           <li><a href="articulos/pg-02.html">PG-02 — Cuidado de instalaciones y reporte de desperfectos (pág. 4)</a></li>
@@ -140,11 +223,17 @@
           <li><a href="articulos/pg-05.html">PG-05 — Reservación de pérgola para uso exclusivo (pág. 5)</a></li>
         </ul>
       </section>
+    </div>
 
-      <!-- EVENTOS (título formal) -->
-      <section class="card" data-topic="eventos reserva invitados depósito garantía calendario límite 25 personas estacionamiento externo domingos festivos música 22:00">
-        <h2>Eventos en áreas comunes <span class="tag">EV</span></h2>
-        <ul>
+    <!-- EVENTOS -->
+    <div class="col-12 col-md-6">
+      <section class="topic-card h-100"
+        data-topic="eventos reserva invitados depósito garantía calendario límite personas estacionamiento externo domingos festivos música 22:00">
+        <div class="section-title mb-2">
+          <h2 class="h6 mb-0 fw-bold">Eventos en áreas comunes</h2>
+          <span class="badge badge-soft rounded-pill">EV</span>
+        </div>
+        <ul class="list-unstyled mb-0 small text-secondary">
           <li><a href="articulos/dg-ev.html">DG-EV — Disposición general: eventos en áreas comunes (pág. 5)</a></li>
           <li><a href="articulos/ev-01.html">EV-01 — Autorización y requisitos para eventos (pág. 5)</a></li>
           <li><a href="articulos/ev-02.html">EV-02 — Depósito en garantía por eventos (pág. 5)</a></li>
@@ -154,11 +243,17 @@
           <li><a href="articulos/ev-06.html">EV-06 — Restricciones de uso y prohibiciones (pág. 6)</a></li>
         </ul>
       </section>
+    </div>
 
-      <!-- IMAGEN (título formal) -->
-      <section class="card" data-topic="imagen plusvalía fachada color pintura ventanas puertas terrazas rejas tendederos basura escombro anuncios bazar garaje limpieza">
-        <h2>Imagen condominal y plusvalía <span class="tag">IP</span></h2>
-        <ul>
+    <!-- IMAGEN -->
+    <div class="col-12 col-md-6">
+      <section class="topic-card h-100"
+        data-topic="imagen plusvalía fachada color pintura ventanas puertas terrazas rejas tendederos basura escombro anuncios bazar garaje limpieza">
+        <div class="section-title mb-2">
+          <h2 class="h6 mb-0 fw-bold">Imagen condominal y plusvalía</h2>
+          <span class="badge badge-soft rounded-pill">IP</span>
+        </div>
+        <ul class="list-unstyled mb-0 small text-secondary">
           <li><a href="articulos/dg-ip.html">DG-IP — Disposición general: armonía estética del condominio (pág. 6)</a></li>
           <li><a href="articulos/ip-01.html">IP-01 — Prohibición de modificación de fachadas (pág. 6)</a></li>
           <li><a href="articulos/ip-02.html">IP-02 — Autorización para mantenimiento visible (pág. 6)</a></li>
@@ -169,11 +264,17 @@
           <li><a href="articulos/ip-07.html">IP-07 — Vehículos, basura y materiales visibles (pág. 7)</a></li>
         </ul>
       </section>
+    </div>
 
-      <!-- AUTOMÓVILES (título formal) -->
-      <section class="card" data-topic="automóviles estacionamientos visitantes identificación placas velocidad claxon inmovilizador camiones taxis cajuela vehículos grandes 2.5 toneladas 7 metros 2.5 metros">
-        <h2>Automóviles y estacionamientos <span class="tag">AE</span></h2>
-        <ul>
+    <!-- AUTOMÓVILES -->
+    <div class="col-12 col-md-6">
+      <section class="topic-card h-100"
+        data-topic="automóviles estacionamientos visitantes identificación placas velocidad claxon inmovilizador camiones taxis cajuela vehículos grandes">
+        <div class="section-title mb-2">
+          <h2 class="h6 mb-0 fw-bold">Automóviles y estacionamientos</h2>
+          <span class="badge badge-soft rounded-pill">AE</span>
+        </div>
+        <ul class="list-unstyled mb-0 small text-secondary">
           <li><a href="articulos/dg-ae.html">DG-AE — Disposición general: seguridad y orden vehicular (pág. 8)</a></li>
           <li><a href="articulos/ae-01.html">AE-01 — Registro e identificación de visitantes (pág. 8)</a></li>
           <li><a href="articulos/ae-02.html">AE-02 — Reglas de acceso y control vehicular (pág. 8)</a></li>
@@ -182,11 +283,17 @@
           <li><a href="articulos/ae-05.html">AE-05 — Inmovilizadores y multas (pág. 9)</a></li>
         </ul>
       </section>
+    </div>
 
-      <!-- MASCOTAS (título formal) -->
-      <section class="card" data-topic="mascotas perros gatos correa excretas bolsas vacunación collar identificación alberca pérgola asadores domésticos peligrosos salvajes">
-        <h2>Mascotas <span class="tag">MA</span></h2>
-        <ul>
+    <!-- MASCOTAS -->
+    <div class="col-12 col-md-6">
+      <section class="topic-card h-100"
+        data-topic="mascotas perros gatos correa excretas bolsas vacunación collar identificación alberca pérgola asadores domésticos peligrosos">
+        <div class="section-title mb-2">
+          <h2 class="h6 mb-0 fw-bold">Mascotas</h2>
+          <span class="badge badge-soft rounded-pill">MA</span>
+        </div>
+        <ul class="list-unstyled mb-0 small text-secondary">
           <li><a href="articulos/dg-ma.html">DG-MA — Disposición general: tenencia responsable (pág. 9)</a></li>
           <li><a href="articulos/ma-01.html">MA-01 — Tipos de mascotas permitidas (pág. 9)</a></li>
           <li><a href="articulos/ma-02.html">MA-02 — Responsabilidad del propietario (pág. 10)</a></li>
@@ -194,93 +301,123 @@
           <li><a href="articulos/ma-04.html">MA-04 — Prohibición en alberca, pérgola y asadores (pág. 10)</a></li>
         </ul>
       </section>
+    </div>
 
-      <!-- MUDANZAS (título formal) -->
-      <section class="card" data-topic="mudanzas muebles horarios aviso administración arrendatarios salida vehículos daños multa">
-        <h2>Mudanzas <span class="tag">MU</span></h2>
-        <ul>
+    <!-- MUDANZAS -->
+    <div class="col-12 col-md-6">
+      <section class="topic-card h-100" data-topic="mudanzas horarios aviso administración arrendatarios salida daños sanciones">
+        <div class="section-title mb-2">
+          <h2 class="h6 mb-0 fw-bold">Mudanzas</h2>
+          <span class="badge badge-soft rounded-pill">MU</span>
+        </div>
+        <ul class="list-unstyled mb-0 small text-secondary">
           <li><a href="articulos/dg-mu.html">DG-MU — Disposición general: control de ingresos y egresos (pág. 10)</a></li>
           <li><a href="articulos/mu-01.html">MU-01 — Aviso previo y horarios permitidos (pág. 10)</a></li>
           <li><a href="articulos/mu-02.html">MU-02 — Autorización de salida y control (pág. 10)</a></li>
           <li><a href="articulos/mu-03.html">MU-03 — Daños y sanciones por mudanzas (pág. 11)</a></li>
         </ul>
       </section>
+    </div>
 
-      <!-- BASURA (título formal) -->
-      <section class="card" data-topic="basura desechos orgánica inorgánica contenedores escombro cajas plagas olores reciclables">
-        <h2>Basura y desechos <span class="tag">BD</span></h2>
-        <ul>
+    <!-- BASURA -->
+    <div class="col-12 col-md-6">
+      <section class="topic-card h-100" data-topic="basura desechos orgánica inorgánica contenedores escombro voluminosos">
+        <div class="section-title mb-2">
+          <h2 class="h6 mb-0 fw-bold">Basura y desechos</h2>
+          <span class="badge badge-soft rounded-pill">BD</span>
+        </div>
+        <ul class="list-unstyled mb-0 small text-secondary">
           <li><a href="articulos/dg-bd.html">DG-BD — Disposición general: manejo adecuado de residuos (pág. 11)</a></li>
           <li><a href="articulos/bd-01.html">BD-01 — Separación y disposición de basura (pág. 11)</a></li>
           <li><a href="articulos/bd-02.html">BD-02 — Prohibiciones y sanciones (pág. 11)</a></li>
           <li><a href="articulos/bd-03.html">BD-03 — Escombro y residuos voluminosos (pág. 11)</a></li>
         </ul>
       </section>
+    </div>
 
-      <!-- VISITAS (título formal) -->
-      <section class="card" data-topic="visitas acceso caseta aviso identificación taxi bitácora respeto vigilancia">
-        <h2>Visitas <span class="tag">VI</span></h2>
-        <ul>
+    <!-- VISITAS -->
+    <div class="col-12 col-md-6">
+      <section class="topic-card h-100" data-topic="visitas acceso caseta aviso identificación control seguridad">
+        <div class="section-title mb-2">
+          <h2 class="h6 mb-0 fw-bold">Visitas</h2>
+          <span class="badge badge-soft rounded-pill">VI</span>
+        </div>
+        <ul class="list-unstyled mb-0 small text-secondary">
           <li><a href="articulos/dg-vi.html">DG-VI — Disposición general: control y seguridad (pág. 11)</a></li>
           <li><a href="articulos/vi-01.html">VI-01 — Aviso y registro de visitas (pág. 11)</a></li>
           <li><a href="articulos/vi-02.html">VI-02 — Obligaciones de los visitantes (pág. 11)</a></li>
         </ul>
       </section>
+    </div>
 
-      <!-- OBLIGACIONES / DERECHOS / PROHIBICIONES (título formal + subtítulo formal) -->
-      <section class="card" data-topic="derechos obligaciones prohibiciones asamblea voto carta poder drogas armas alcohol moral ilícitas escándalo ruido">
-        <h2>Obligaciones, derechos y prohibiciones <span class="tag">OP</span></h2>
-        <ul>
+    <!-- OP -->
+    <div class="col-12 col-md-6">
+      <section class="topic-card h-100" data-topic="derechos obligaciones prohibiciones asamblea voto carta poder drogas armas alcohol moral ilícitas">
+        <div class="section-title mb-2">
+          <h2 class="h6 mb-0 fw-bold">Obligaciones, derechos y prohibiciones</h2>
+          <span class="badge badge-soft rounded-pill">OP</span>
+        </div>
+        <ul class="list-unstyled mb-0 small text-secondary">
           <li><a href="articulos/dg-op.html">DG-OP — Disposición general (pág. 12)</a></li>
           <li><a href="articulos/op-01.html">OP-01 — Derechos de los condóminos (pág. 12)</a></li>
           <li><a href="articulos/op-02.html">OP-02 — Obligaciones generales (pág. 12)</a></li>
           <li><a href="articulos/op-03.html">OP-03 — Prohibiciones generales (pág. 12)</a></li>
         </ul>
       </section>
+    </div>
 
-      <!-- CUOTAS (título formal) -->
-      <section class="card" data-topic="cuotas mantenimiento mensual pago 10 días recargos 10% mora prelación de pago suspensión servicios">
-        <h2>Cuotas y mantenimiento mensual <span class="tag">CU</span></h2>
-        <ul>
+    <!-- CUOTAS -->
+    <div class="col-12 col-md-6">
+      <section class="topic-card h-100" data-topic="cuotas mantenimiento mensual pago recargos mora prelación">
+        <div class="section-title mb-2">
+          <h2 class="h6 mb-0 fw-bold">Cuotas y mantenimiento mensual</h2>
+          <span class="badge badge-soft rounded-pill">CU</span>
+        </div>
+        <ul class="list-unstyled mb-0 small text-secondary">
           <li><a href="articulos/dg-cu.html">DG-CU — Disposición general (pág. 13)</a></li>
           <li><a href="articulos/cu-01.html">CU-01 — Pago de la cuota de mantenimiento (pág. 13)</a></li>
           <li><a href="articulos/cu-02.html">CU-02 — Recargos por mora (pág. 13)</a></li>
           <li><a href="articulos/cu-03.html">CU-03 — Prelación de pagos (pág. 13)</a></li>
         </ul>
       </section>
+    </div>
 
-      <!-- SANCIONES (título formal) -->
-      <section class="card" data-topic="sanciones multas amonestación reparación daño liquidación venta forzada administrador comité vigilancia reincidencia anexo 1 tabulador">
-        <h2>Sanciones <span class="tag">SA</span></h2>
-        <ul>
+    <!-- SANCIONES -->
+    <div class="col-12 col-md-6">
+      <section class="topic-card h-100" data-topic="sanciones multas amonestación reparación procedimiento notificación">
+        <div class="section-title mb-2">
+          <h2 class="h6 mb-0 fw-bold">Sanciones</h2>
+          <span class="badge badge-soft rounded-pill">SA</span>
+        </div>
+        <ul class="list-unstyled mb-0 small text-secondary">
           <li><a href="articulos/dg-sa.html">DG-SA — Disposición general (pág. 13)</a></li>
           <li><a href="articulos/sa-01.html">SA-01 — Tipos de sanciones (pág. 13)</a></li>
           <li><a href="articulos/sa-02.html">SA-02 — Procedimiento sancionador (págs. 13–14)</a></li>
           <li><a href="articulos/sa-03.html">SA-03 — Aplicación y notificación (pág. 14)</a></li>
         </ul>
       </section>
+    </div>
 
-      <!-- EMBARGOS (título formal) -->
-      <section class="card" data-topic="embargos demanda colectiva adeudos mantenimiento jueces bienes menores vía civil asamblea 60% destino venta propiedad condominio">
-        <h2>Embargos <span class="tag">EM</span></h2>
-        <ul>
+    <!-- EMBARGOS -->
+    <div class="col-12 col-md-6">
+      <section class="topic-card h-100" data-topic="embargos adeudos demanda colectiva asamblea procedimiento legal destino del bien">
+        <div class="section-title mb-2">
+          <h2 class="h6 mb-0 fw-bold">Embargos</h2>
+          <span class="badge badge-soft rounded-pill">EM</span>
+        </div>
+        <ul class="list-unstyled mb-0 small text-secondary">
           <li><a href="articulos/dg-em.html">DG-EM — Disposición general (pág. 14)</a></li>
           <li><a href="articulos/em-01.html">EM-01 — Embargo por adeudos (pág. 14)</a></li>
           <li><a href="articulos/em-02.html">EM-02 — Procedimiento legal y destino del bien (pág. 15)</a></li>
         </ul>
       </section>
-
     </div>
-  </div>
+
+  </section>
 </main>
 
-<footer>
-  <div class="wrap">
-    <div>
-      Versión digital del Reglamento Interno 2024 — Privada Lucania.
-      Las interpretaciones y ejemplos son orientativos y no sustituyen la normativa aplicable.
-    </div>
-  </div>
+<footer class="bg-dark text-white text-center py-3 mt-4">
+  <p class="mb-0">&copy; 2025 Privada Lucania - Todos los derechos reservados.</p>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
