@@ -5,29 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>PE-05 — Uso contrario al habitacional | Reglamento 2024</title>
   <meta name="description" content="PE-05 del Reglamento Interno 2024 de Privada Lucania." />
+
   <link rel="icon" href="../assets/icons/favicon.png" />
 
-  <style>
-    :root{ --bg:#ffffff; --card:#f4f6fa; --text:#0b1220; --muted:#4a5568; --accent:#2fbf71; --line:rgba(0,0,0,.12); }
-    [data-theme="dark"]{ --bg:#0b1220; --card:#0f1b33; --text:#e7eefc; --muted:#a9b7d6; --accent:#35c26b; --line:rgba(255,255,255,.08); }
-    body{ margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial; background:var(--bg); color:var(--text); }
-    header{ padding:20px 18px; border-bottom:1px solid var(--line); }
-    .wrap{ max-width:980px; margin:0 auto; }
-    .topbar{ display:flex; gap:10px; flex-wrap:wrap; align-items:center; justify-content:space-between; }
-    .btn{ padding:10px 12px; border-radius:12px; border:1px solid var(--line); background:rgba(0,0,0,.03); color:var(--text); cursor:pointer; text-decoration:none; display:inline-flex; align-items:center; gap:8px; white-space:nowrap; }
-    [data-theme="dark"] .btn{ background:rgba(255,255,255,.04); }
-    main{ padding:18px; }
-    .grid{ display:grid; grid-template-columns:repeat(12,1fr); gap:14px; }
-    .card{ grid-column:span 12; background:rgba(0,0,0,.02); border:1px solid var(--line); border-radius:16px; padding:14px; }
-    [data-theme="dark"] .card{ background:rgba(255,255,255,.03); }
-    h1{ margin:0; font-size:20px; }
-    .muted{ color:var(--muted); }
-    .k{ display:inline-block; font-size:12px; padding:2px 8px; border-radius:999px; border:1px solid rgba(47,191,113,.22); background:rgba(47,191,113,.12); }
-    blockquote{ margin:0; padding:12px 12px; border-left:4px solid var(--accent); background:rgba(0,0,0,.03); border-radius:12px; }
-    [data-theme="dark"] blockquote{ background:rgba(255,255,255,.04); }
-    ul{ margin:8px 0 0; padding-left:18px; }
-    footer{ padding:18px; border-top:1px solid var(--line); color:var(--muted); }
-  </style>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <!-- Estilos del sitio (colores Lucania) -->
+  <link rel="stylesheet" href="../assets/css/site.css">
 
   <!-- Contador de visitas (GoatCounter) -->
   <script
@@ -38,105 +22,148 @@
 </head>
 
 <body>
-<header>
-  <div class="wrap">
-    <div class="topbar">
-      <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
-        <a class="btn" href="../index.html">⬅️ Volver al índice</a>
-        <a class="btn" href="../docs/Reglamento_Interno_2024.pdf" target="_blank" rel="noopener">📄 PDF oficial</a>
-        <a class="btn" href="../docs/Tabulador_Sanciones_2024_2025.pdf" target="_blank" rel="noopener">⚖️ Tabulador</a>
+
+<header class="border-bottom" style="border-color: var(--line) !important;">
+  <div class="container py-3">
+    <div class="d-flex flex-wrap gap-2 justify-content-between align-items-center">
+
+      <div class="d-flex flex-wrap gap-2 align-items-center">
+        <a class="btn btn-outline-secondary" href="../index.html">← Volver al índice</a>
+        <a class="btn btn-outline-secondary" href="../docs/Reglamento_Interno_2024.pdf" target="_blank" rel="noopener">PDF oficial</a>
+        <a class="btn btn-outline-secondary" href="../docs/Tabulador_Sanciones_2024_2025.pdf" target="_blank" rel="noopener">Tabulador</a>
       </div>
-      <div style="display:flex; gap:10px; flex-wrap:wrap;">
-        <button class="btn" type="button" onclick="setTheme('light')">☀️ Claro</button>
-        <button class="btn" type="button" onclick="setTheme('dark')">🌙 Oscuro</button>
-        <button class="btn" type="button" onclick="setTheme('system')">💻 Sistema</button>
+
+      <div class="d-flex flex-wrap gap-2 align-items-center">
+        <button class="btn btn-outline-secondary" type="button" onclick="setTheme('light')">
+          <span class="dot dot--light" aria-hidden="true"></span> Claro
+        </button>
+        <button class="btn btn-outline-secondary" type="button" onclick="setTheme('dark')">
+          <span class="dot dot--dark" aria-hidden="true"></span> Oscuro
+        </button>
+        <button class="btn btn-outline-secondary" type="button" onclick="setTheme('system')">
+          Sistema
+        </button>
       </div>
+
     </div>
   </div>
 </header>
 
-<main>
-  <div class="wrap">
-    <section class="card">
-      <div class="muted"><span class="k">PE-05</span> · Tema: <span class="k">Propiedad exclusiva</span></div>
-      <h1 style="margin-top:8px;">Prohibición de destinar la vivienda a usos no habitacionales</h1>
-      <p class="muted" style="margin:8px 0 0;">Referencia: Reglamento Interno 2024 · Privada Lucania</p>
-    </section>
+<main class="container my-4">
 
-    <div class="grid" style="margin-top:14px;">
-      <section class="card">
-        <h2 style="margin:0 0 8px;">Texto original (literal)</h2>
-        <blockquote>
-          5. No pueden destinar su vivienda a usos contrarios a su destino que es uso habitacional.
-        </blockquote>
-      </section>
-
-      <section class="card">
-        <h2 style="margin:0 0 8px;">Interpretación en lenguaje sencillo</h2>
-        <p style="margin:0;">
-          La vivienda debe usarse únicamente para fines habitacionales. Cualquier uso que cambie esa finalidad
-          (comercial, industrial, de servicios o de alto flujo de personas) está prohibido, incluso si es parcial
-          o “solo por ratos”.
-        </p>
-        <ul>
-          <li><strong>Clave:</strong> el destino principal de la vivienda no puede alterarse.</li>
-          <li><strong>No importa:</strong> si genera ingresos o no; lo relevante es el cambio de uso.</li>
-        </ul>
-      </section>
-
-      <section class="card">
-        <h2 style="margin:0 0 8px;">Ejemplos y escenarios</h2>
-        <ul>
-          <li><strong>❌ No permitido:</strong> usar la casa como oficina abierta al público, consultorio, academia, taller o local de ventas.</li>
-          <li><strong>❌ No permitido:</strong> almacenar mercancía de forma permanente para distribución o venta.</li>
-          <li><strong>⚠️ Caso común:</strong> “solo trabajo desde casa”. Si hay atención a clientes, flujo constante o actividad comercial visible, puede considerarse uso no habitacional.</li>
-          <li><strong>✅ Permitido:</strong> actividades personales normales (teletrabajo sin atención al público ni impacto al condominio).</li>
-        </ul>
-      </section>
-
-      <section class="card">
-        <h2 style="margin:0 0 8px;">Sanción aplicable</h2>
-
-        <p style="margin:0 0 8px;">
-          <span class="k">Estado: No tipificado de forma expresa</span>
-        </p>
-
-        <p class="muted" style="margin:0;">
-          El Tabulador de Sanciones no contempla de manera textual el “uso no habitacional” como un caso específico.
-          En caso de presentarse, se documentará y resolverá conforme a criterios generales del reglamento,
-          acuerdos de asamblea y, en su caso, la legislación aplicable al régimen en condominio.
-        </p>
-      </section>
-
+  <!-- Encabezado -->
+  <section class="hero p-4 mb-4">
+    <div class="d-flex flex-column gap-1">
+      <div class="meta">
+        <span class="badge badge-soft rounded-pill px-3 py-2">PE-05</span>
+        <span class="ms-2 badge badge-soft rounded-pill px-3 py-2">Propiedad exclusiva</span>
+        <span class="ms-2 meta">· Página 1 del PDF oficial</span>
+      </div>
+      <h1 class="h4 fw-bold mb-0">Prohibición de destinar la vivienda a usos contrarios a su destino (habitacional)</h1>
+      <p class="mb-0" style="opacity:.95;">
+        Referencia: Reglamento Interno 2024 · Privada Lucania
+      </p>
     </div>
+  </section>
+
+  <div class="row g-3">
+
+    <!-- TEXTO ORIGINAL -->
+    <div class="col-12 col-lg-6">
+      <section class="article-card h-100">
+        <h2 class="h6 fw-bold mb-2">Texto original (literal)</h2>
+        <div class="literal-box">
+          <!-- Pegado del texto parseado del PDF, sin editar -->
+          <p class="mb-0">5. No pueden destinar su vivienda a usos contrarios a su destino que es uso habitacional.</p>
+        </div>
+      </section>
+    </div>
+
+    <!-- INTERPRETACIÓN -->
+    <div class="col-12 col-lg-6">
+      <section class="article-card h-100">
+        <h2 class="h6 fw-bold mb-2">Interpretación en lenguaje sencillo</h2>
+        <p class="mb-0">
+          La vivienda debe mantenerse con <strong>destino habitacional</strong>. Esto significa que no se debe usar
+          como si fuera un negocio o actividad principal distinta a “vivir ahí”, cuando ese uso cambie el destino
+          o impacte al condominio.
+        </p>
+        <ul class="mt-2 mb-0">
+          <li><strong>Clave:</strong> el destino principal de la vivienda no debe alterarse.</li>
+          <li><strong>En la práctica:</strong> si hay atención al público, flujo constante, ruido, logística o uso visible como negocio, puede considerarse uso contrario al habitacional.</li>
+        </ul>
+      </section>
+    </div>
+
+    <!-- EJEMPLOS -->
+    <div class="col-12 col-lg-6">
+      <section class="article-card h-100">
+        <h2 class="h6 fw-bold mb-2">Ejemplos y escenarios</h2>
+        <ul class="mb-0">
+          <li><strong>No permitido (ejemplos típicos):</strong> usar la casa como consultorio, academia, taller o local de ventas con atención a clientes.</li>
+          <li><strong>No permitido:</strong> almacenar mercancía de forma permanente para distribución o venta si eso vuelve “operativo” el domicilio.</li>
+          <li><strong>Caso común:</strong> “solo trabajo desde casa”. Si no hay atención al público ni impacto al condominio, suele considerarse compatible; si sí lo hay, puede entrar en conflicto con este artículo.</li>
+          <li><strong>Permitido:</strong> actividades personales normales (teletrabajo sin clientes, sin ruido, sin logística, sin afectar áreas comunes).</li>
+        </ul>
+      </section>
+    </div>
+
+    <!-- SANCIÓN -->
+    <div class="col-12 col-lg-6">
+      <section class="article-card h-100">
+        <h2 class="h6 fw-bold mb-2">Sanción aplicable</h2>
+
+        <p class="mb-2">
+          <span class="badge badge-soft rounded-pill px-3 py-2">Estado: No tipificado de forma textual</span>
+        </p>
+
+        <p class="mb-0">
+          El Tabulador de Sanciones no incluye un renglón que diga literalmente “uso no habitacional”.
+          Cuando el caso encaja en una conducta tipificada (por ejemplo, <strong>perturbar la tranquilidad</strong>,
+          uso indebido de áreas comunes, etc.), se aplica la sanción correspondiente a esa conducta.
+        </p>
+
+        <div class="hr-soft"></div>
+
+        <p class="mb-0">
+          Si el caso no encaja en un renglón específico, el Tabulador prevé <strong>“casos no previstos”</strong>:
+          se define una cantidad (al menos el <strong>100% de la cuota ordinaria anual</strong>, según la gravedad),
+          con <strong>aprobación por votación unánime del Comité de Vigilancia</strong>.
+        </p>
+
+        <div class="hr-soft"></div>
+
+        <p class="mb-0">
+          Adicionalmente, si hay <strong>incumplimiento reiterado</strong> del reglamento, puede utilizarse el renglón
+          de <strong>“No cumplir de forma reiterada cualquier otro artículo del reglamento”</strong> (Nivel ALTO),
+          conforme al Tabulador.
+        </p>
+      </section>
+    </div>
+
   </div>
+
+  <!-- NAVEGACIÓN -->
+  <div class="d-flex justify-content-between mt-4">
+    <a class="btn btn-outline-secondary" href="pe-04.html">← Anterior: PE-04</a>
+    <a class="btn btn-success" href="pe-06.html">Siguiente: PE-06 →</a>
+  </div>
+
+  <div class="mt-3">
+    <a class="btn btn-link" href="../index.html">Volver al índice</a>
+  </div>
+
 </main>
 
-<footer>
-  <div class="wrap">
-    Interpretaciones y ejemplos: orientativos. El texto original del reglamento es la referencia principal.
+<footer class="border-top py-3 mt-4" style="border-color: var(--line) !important;">
+  <div class="container">
+    <div class="text-secondary small">
+      Interpretaciones y ejemplos: orientativos. El texto original del reglamento es la referencia principal.
+    </div>
   </div>
 </footer>
 
-<script>
-  const root = document.documentElement;
-  function applyTheme(theme){
-    if(theme === 'dark'){ root.setAttribute('data-theme','dark'); }
-    else if(theme === 'light'){ root.removeAttribute('data-theme'); }
-    else{
-      root.removeAttribute('data-theme');
-      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        root.setAttribute('data-theme','dark');
-      }
-    }
-  }
-  function setTheme(theme){ localStorage.setItem('theme', theme); applyTheme(theme); }
-  applyTheme(localStorage.getItem('theme') || 'system');
-  if (window.matchMedia) {
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-      if ((localStorage.getItem('theme') || 'system') === 'system') applyTheme('system');
-    });
-  }
-</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/js/site.js"></script>
 </body>
 </html>
