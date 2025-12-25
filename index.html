@@ -6,150 +6,7 @@
   <title>Reglamento Interno 2024 | Privada Lucania</title>
   <meta name="description" content="Índice temático del Reglamento Interno 2024 de Privada Lucania." />
   <link rel="icon" href="assets/icons/favicon.png" />
-
-  <style>
-    /* Tema por defecto: CLARO */
-    :root{
-      --bg: #ffffff;
-      --card: #f4f6fa;
-      --text: #0b1220;
-      --muted: #4a5568;
-      --accent: #2fbf71;
-      --line: rgba(0,0,0,.12);
-    }
-
-    /* Tema oscuro */
-    [data-theme="dark"]{
-      --bg:#0b1220;
-      --card:#0f1b33;
-      --text:#e7eefc;
-      --muted:#a9b7d6;
-      --accent:#35c26b;
-      --line:rgba(255,255,255,.08);
-    }
-
-    body{
-      margin:0;
-      font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial;
-      background: var(--bg);
-      color: var(--text);
-    }
-
-    header{
-      padding:28px 18px 18px;
-      border-bottom:1px solid var(--line);
-    }
-
-    .wrap{ max-width:980px; margin:0 auto; }
-    h1{ margin:0 0 6px; font-size:26px; }
-    .sub{ color:var(--muted); margin:0; line-height:1.4; }
-
-    .toolbar{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      margin-top:16px;
-      align-items:stretch;
-    }
-
-    .search{ flex:1; min-width:240px; }
-    input{
-      width:100%;
-      padding:12px 12px;
-      border-radius:12px;
-      border:1px solid var(--line);
-      background: rgba(0,0,0,.03);
-      color: var(--text);
-      outline:none;
-    }
-    [data-theme="dark"] input{ background: rgba(255,255,255,.04); }
-    input::placeholder{ color: rgba(11,18,32,.55); }
-    [data-theme="dark"] input::placeholder{ color: rgba(231,238,252,.55); }
-
-    .btn{
-      padding:12px 14px;
-      border-radius:12px;
-      border:1px solid var(--line);
-      background: rgba(0,0,0,.03);
-      color: var(--text);
-      cursor:pointer;
-      text-decoration:none;
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      user-select:none;
-      white-space:nowrap;
-    }
-    [data-theme="dark"] .btn{ background: rgba(255,255,255,.04); }
-    .btn:hover{ filter: brightness(0.98); }
-
-/* Indicadores de tema (puntito / cuadrito) */
-.dot{
-  width:10px;
-  height:10px;
-  display:inline-block;
-  border-radius:999px; /* círculo */
-  border:1px solid var(--line);
-  background: transparent;
-}
-
-.dot--light{ background:#ffffff; } /* muestra “claro” */
-.dot--dark{ background:#0b1220; }  /* muestra “oscuro” */    
-
-    main{ padding:18px; }
-
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(12,1fr);
-      gap:14px;
-    }
-
-    .card{
-      grid-column:span 12;
-      background: rgba(0,0,0,.02);
-      border:1px solid var(--line);
-      border-radius:16px;
-      padding:14px 14px 10px;
-    }
-    [data-theme="dark"] .card{ background: rgba(255,255,255,.03); }
-
-    @media(min-width:800px){
-      .card{ grid-column:span 6; }
-    }
-
-    h2{ margin:0 0 8px; font-size:16px; }
-    ul{ margin:0; padding-left:18px; }
-    li{ margin:6px 0; color:var(--muted); }
-
-    a{ color:var(--text); text-decoration:none; }
-    a:hover{ text-decoration:underline; }
-
-    .tag{
-      display:inline-block;
-      font-size:12px;
-      padding:2px 8px;
-      border-radius:999px;
-      background: rgba(47,191,113,.12);
-      border:1px solid rgba(47,191,113,.22);
-      color: var(--text);
-      margin-left:8px;
-    }
-
-    .note{
-      margin-top:10px;
-      font-size:13px;
-      color: rgba(11,18,32,.7);
-    }
-    [data-theme="dark"] .note{ color: rgba(231,238,252,.7); }
-
-    footer{
-      padding:20px 18px;
-      color:var(--muted);
-      border-top:1px solid var(--line);
-    }
-
-    .hidden{ display:none; }
-  </style>
+  <link rel="stylesheet" href="assets/css/site.css" />
 
   <!-- Contador de visitas (GoatCounter) -->
   <script
@@ -176,13 +33,13 @@
       <a class="btn" href="docs/Reglamento_Interno_2024.pdf" target="_blank" rel="noopener">Ver PDF oficial</a>
       <a class="btn" href="docs/Tabulador_Sanciones_2024_2025.pdf" target="_blank" rel="noopener">Tabulador de sanciones</a>
 
-<button class="btn" type="button" onclick="setTheme('light')">
-  <span class="dot dot--light"></span> Claro
-</button>
-
-<button class="btn" type="button" onclick="setTheme('dark')">
-  <span class="dot dot--dark"></span> Oscuro
-</button>
+      <button class="btn" type="button" onclick="setTheme('light')">
+        <span class="dot dot--light"></span> Claro
+      </button>
+      
+      <button class="btn" type="button" onclick="setTheme('dark')">
+        <span class="dot dot--dark"></span> Oscuro
+      </button>
       
       <button class="btn" type="button" onclick="setTheme('system')">Sistema</button>
     </div>
@@ -425,73 +282,7 @@
   </div>
 </footer>
 
-<script>
-  // ====== Tema: claro/oscuro/sistema (persistente) ======
-  const root = document.documentElement;
-
-  function applyTheme(theme){
-    if(theme === 'dark'){
-      root.setAttribute('data-theme','dark');
-    } else if(theme === 'light'){
-      root.removeAttribute('data-theme');
-    } else {
-      // system
-      root.removeAttribute('data-theme');
-      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        root.setAttribute('data-theme','dark');
-      }
-    }
-  }
-
-  function setTheme(theme){
-    localStorage.setItem('theme', theme);
-    applyTheme(theme);
-  }
-
-  const savedTheme = localStorage.getItem('theme') || 'system';
-  applyTheme(savedTheme);
-
-  if (window.matchMedia) {
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-      if ((localStorage.getItem('theme') || 'system') === 'system') {
-        applyTheme('system');
-      }
-    });
-  }
-
-  // ====== Buscador simple (filtra tarjetas y sus enlaces) ======
-  const q = document.getElementById('q');
-  const cards = Array.from(document.querySelectorAll('.card'));
-
-  function normalize(s){
-    return (s || '')
-      .toLowerCase()
-      .normalize('NFD')
-      .replace(/[\u0300-\u036f]/g,''); // quita acentos
-  }
-
-  function runSearch(){
-    const term = normalize(q.value.trim());
-
-    cards.forEach(card => {
-      const topic = normalize(card.getAttribute('data-topic') || '');
-      const links = Array.from(card.querySelectorAll('li'));
-      let anyVisible = false;
-
-      links.forEach(li => {
-        const text = normalize(li.textContent);
-        const match = !term || topic.includes(term) || text.includes(term);
-        li.classList.toggle('hidden', !match);
-        if (match) anyVisible = true;
-      });
-
-      // Si ningún link quedó visible, ocultamos toda la tarjeta
-      card.classList.toggle('hidden', !anyVisible);
-    });
-  }
-
-  q.addEventListener('input', runSearch);
-</script>
+<script src="assets/js/site.js"></script>
 
 </body>
 </html>
