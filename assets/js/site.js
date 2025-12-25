@@ -17,19 +17,27 @@
   // ====== Theme (light/dark/system) ======
   const root = document.documentElement;
 
-  function applyTheme(theme){
-    if(theme === "dark"){
+function applyTheme(theme){
+  if(theme === "dark"){
+    root.setAttribute("data-theme","dark");      // tus variables
+    root.setAttribute("data-bs-theme","dark");   // bootstrap
+  } else if(theme === "light"){
+    root.removeAttribute("data-theme");          // tus variables (claro)
+    root.setAttribute("data-bs-theme","light");  // bootstrap
+  } else {
+    // system
+    root.removeAttribute("data-theme");
+    root.removeAttribute("data-bs-theme");
+    if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
       root.setAttribute("data-theme","dark");
-    } else if(theme === "light"){
-      root.removeAttribute("data-theme");
+      root.setAttribute("data-bs-theme","dark");
     } else {
-      // system
-      root.removeAttribute("data-theme");
-      if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
-        root.setAttribute("data-theme","dark");
-      }
+      root.setAttribute("data-bs-theme","light");
     }
   }
+}
+
+  
 
   // expone setTheme global para onclick en HTML
   window.setTheme = function setTheme(theme){
