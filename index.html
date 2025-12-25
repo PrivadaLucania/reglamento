@@ -83,6 +83,19 @@
     [data-theme="dark"] .btn{ background: rgba(255,255,255,.04); }
     .btn:hover{ filter: brightness(0.98); }
 
+/* Indicadores de tema (puntito / cuadrito) */
+.dot{
+  width:10px;
+  height:10px;
+  display:inline-block;
+  border-radius:999px; /* círculo */
+  border:1px solid var(--line);
+  background: transparent;
+}
+
+.dot--light{ background:#ffffff; } /* muestra “claro” */
+.dot--dark{ background:#0b1220; }  /* muestra “oscuro” */    
+
     main{ padding:18px; }
 
     .grid{
@@ -163,8 +176,14 @@
       <a class="btn" href="docs/Reglamento_Interno_2024.pdf" target="_blank" rel="noopener">Ver PDF oficial</a>
       <a class="btn" href="docs/Tabulador_Sanciones_2024_2025.pdf" target="_blank" rel="noopener">Tabulador de sanciones</a>
 
-      <button class="btn" type="button" onclick="setTheme('light')">Claro</button>
-      <button class="btn" type="button" onclick="setTheme('dark')">Oscuro</button>
+<button class="btn" type="button" onclick="setTheme('light')">
+  <span class="dot dot--light"></span> Claro
+</button>
+
+<button class="btn" type="button" onclick="setTheme('dark')">
+  <span class="dot dot--dark"></span> Oscuro
+</button>
+      
       <button class="btn" type="button" onclick="setTheme('system')">Sistema</button>
     </div>
 
