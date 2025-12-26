@@ -3,31 +3,15 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AC-01 — Uso de áreas comunes (condición: no moroso) | Reglamento 2024</title>
+  <title>AC-01 — Uso de áreas comunes condicionado a no ser moroso | Reglamento 2024</title>
   <meta name="description" content="AC-01 del Reglamento Interno 2024 de Privada Lucania." />
+
   <link rel="icon" href="../assets/icons/favicon.png" />
 
-  <style>
-    :root{ --bg:#ffffff; --card:#f4f6fa; --text:#0b1220; --muted:#4a5568; --accent:#2fbf71; --line:rgba(0,0,0,.12); }
-    [data-theme="dark"]{ --bg:#0b1220; --card:#0f1b33; --text:#e7eefc; --muted:#a9b7d6; --accent:#35c26b; --line:rgba(255,255,255,.08); }
-    body{ margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial; background:var(--bg); color:var(--text); }
-    header{ padding:20px 18px; border-bottom:1px solid var(--line); }
-    .wrap{ max-width:980px; margin:0 auto; }
-    .topbar{ display:flex; gap:10px; flex-wrap:wrap; align-items:center; justify-content:space-between; }
-    .btn{ padding:10px 12px; border-radius:12px; border:1px solid var(--line); background:rgba(0,0,0,.03); color:var(--text); cursor:pointer; text-decoration:none; display:inline-flex; align-items:center; gap:8px; white-space:nowrap; }
-    [data-theme="dark"] .btn{ background:rgba(255,255,255,.04); }
-    main{ padding:18px; }
-    .grid{ display:grid; grid-template-columns:repeat(12,1fr); gap:14px; }
-    .card{ grid-column:span 12; background:rgba(0,0,0,.02); border:1px solid var(--line); border-radius:16px; padding:14px; }
-    [data-theme="dark"] .card{ background:rgba(255,255,255,.03); }
-    h1{ margin:0; font-size:20px; }
-    .muted{ color:var(--muted); }
-    .k{ display:inline-block; font-size:12px; padding:2px 8px; border-radius:999px; border:1px solid rgba(47,191,113,.22); background:rgba(47,191,113,.12); }
-    blockquote{ margin:0; padding:12px 12px; border-left:4px solid var(--accent); background:rgba(0,0,0,.03); border-radius:12px; white-space:pre-line; }
-    [data-theme="dark"] blockquote{ background:rgba(255,255,255,.04); }
-    ul{ margin:8px 0 0; padding-left:18px; }
-    footer{ padding:18px; border-top:1px solid var(--line); color:var(--muted); }
-  </style>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <!-- Estilos del sitio -->
+  <link rel="stylesheet" href="../assets/css/site.css">
 
   <!-- Contador de visitas (GoatCounter) -->
   <script
@@ -38,118 +22,110 @@
 </head>
 
 <body>
-<header>
-  <div class="wrap">
-    <div class="topbar">
-      <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
-        <a class="btn" href="../index.html">⬅️ Volver al índice</a>
-        <a class="btn" href="../docs/Reglamento_Interno_2024.pdf" target="_blank" rel="noopener">📄 PDF oficial</a>
-        <a class="btn" href="../docs/Tabulador_Sanciones_2024_2025.pdf" target="_blank" rel="noopener">⚖️ Tabulador</a>
-      </div>
-      <div style="display:flex; gap:10px; flex-wrap:wrap;">
-        <button class="btn" type="button" onclick="setTheme('light')">☀️ Claro</button>
-        <button class="btn" type="button" onclick="setTheme('dark')">🌙 Oscuro</button>
-        <button class="btn" type="button" onclick="setTheme('system')">💻 Sistema</button>
-      </div>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-success">
+  <div class="container">
+    <a class="navbar-brand fw-semibold" href="../index.html">Privada Lucania · Reglamento Interno</a>
+    <div class="ms-auto d-flex gap-2">
+      <a class="btn btn-sm btn-outline-light" href="../docs/Reglamento_Interno_2024.pdf" target="_blank" rel="noopener">PDF</a>
+      <a class="btn btn-sm btn-outline-light" href="../docs/Tabulador_Sanciones_2024_2025.pdf" target="_blank" rel="noopener">Tabulador</a>
     </div>
   </div>
-</header>
+</nav>
 
-<main>
-  <div class="wrap">
-    <section class="card">
-      <div class="muted"><span class="k">AC-01</span> · Tema: <span class="k">Áreas comunes</span></div>
-      <h1 style="margin-top:8px;">Uso de áreas comunes (condición: no moroso)</h1>
-      <p class="muted" style="margin:8px 0 0;">Referencia: Reglamento Interno 2024 · Privada Lucania</p>
-    </section>
+<main class="container my-4">
 
-    <div class="grid" style="margin-top:14px;">
-      <section class="card">
-        <h2 style="margin:0 0 8px;">Texto original (literal)</h2>
-        <blockquote>
-          <p>Cada condómino, y en general los habitantes del condominio, podrán usar todos las Áreas comunes
-y gozar, siempre y cuando no sea moroso, de los servicios e instalaciones generales conforme a su
-naturaleza y destino originales, sin restringir o hacer más oneroso el derecho de los demás, pues de
-lo contrario se hará acreedor a las sanciones previstas en este reglamento; sin perjuicio de las
-responsabilidades del orden civil o penal en que pueda incurrir.</p>
+  <section class="hero p-4 mb-4">
+    <h1 class="h4 fw-bold mb-1">AC-01 — Uso de áreas comunes condicionado a no ser moroso</h1>
+    <p class="mb-0"><span class="meta">Página 2 del PDF oficial</span></p>
+  </section>
 
-        </blockquote>
+  <div class="row g-3">
+
+    <!-- TEXTO ORIGINAL -->
+    <div class="col-12 col-lg-6">
+      <section class="article-card h-100">
+        <h2 class="h6 fw-bold mb-2">Texto original (literal)</h2>
+        <div class="literal-box">
+          <p class="mb-0">
+            Cada condómino, y en general los habitantes del condominio, podrán usar todos las Áreas comunes<br>
+            y gozar, siempre y cuando no sea moroso, de los servicios e instalaciones generales conforme a su<br>
+            naturaleza y destino originales, sin restringir o hacer más oneroso el derecho de los demás, pues de<br>
+            lo contrario se hará acreedor a las sanciones previstas en este reglamento; sin perjuicio de las<br>
+            responsabilidades del orden civil o penal en que pueda incurrir.
+          </p>
+        </div>
       </section>
-
-      <section class="card">
-        <h2 style="margin:0 0 8px;">Interpretación en lenguaje sencillo</h2>
-        <p style="margin:0;">
-          Las áreas comunes son para uso de todos, pero con reglas:
-          <strong>(1)</strong> debes usarlas según su destino (por ejemplo, pérgola para convivencia, pasillos para tránsito, etc.),
-          <strong>(2)</strong> no debes estorbar, restringir o encarecer el derecho de los demás,
-          y <strong>(3)</strong> para gozar de servicios e instalaciones generales debes <strong>no estar clasificado como moroso</strong>.
-        </p>
-        <ul>
-          <li><strong>Importante:</strong> aunque alguien “no use” un área común, sus obligaciones siguen vigentes.</li>
-          <li><strong>También aplica:</strong> a inquilinos, visitas y personas que habitan el condominio.</li>
-        </ul>
-      </section>
-
-      <section class="card">
-        <h2 style="margin:0 0 8px;">Ejemplos y escenarios</h2>
-        <ul>
-          <li><strong>✅ Correcto:</strong> usar la pérgola en el horario permitido y dejarla limpia al terminar.</li>
-          <li><strong>❌ Incorrecto:</strong> “apartar” con objetos una zona común para uso exclusivo o bloquear pasillos con cosas.</li>
-          <li><strong>❌ Incorrecto:</strong> usar un área común para algo distinto a su destino (por ejemplo, hacer negocio/venta, taller, bodega, etc.).</li>
-          <li><strong>⚠️ Morosidad:</strong> si el condómino está clasificado como moroso, puede perder el acceso a ciertos servicios/instalaciones conforme a lo que establezca el reglamento y las medidas aplicables.</li>
-          <li><strong>📌 Ojo:</strong> “yo no uso la alberca/pérgola, entonces no me aplica” → no: las obligaciones del reglamento siguen aplicando.</li>
-        </ul>
-      </section>
-
-      <section class="card">
-        <h2 style="margin:0 0 8px;">Sanción aplicable</h2>
-
-        <p style="margin:0 0 8px;">
-          <span class="k">Nivel: ALTO</span>
-          <span class="muted">· Caso: No cumplir de forma reiterada cualquier otro artículo del reglamento / afectar el uso y disfrute de áreas comunes.</span>
-        </p>
-
-        <ul style="margin:0; padding-left:18px;">
-          <li><strong>1ª sanción:</strong> $1,500.00</li>
-          <li><strong>2ª sanción:</strong> $3,000.00</li>
-          <li><strong>3ª sanción:</strong> $4,500.00</li>
-        </ul>
-
-        <p class="muted" style="margin:10px 0 0;">
-          Nota: Además de la multa, pueden existir consecuencias adicionales según el caso (por ejemplo,
-          suspensión gradual de servicios de áreas comunes a partir de reincidencias, y/o responsabilidades civiles o penales si aplica).
-        </p>
-      </section>
-
     </div>
+
+    <!-- INTERPRETACIÓN -->
+    <div class="col-12 col-lg-6">
+      <section class="article-card h-100">
+        <h2 class="h6 fw-bold mb-2">Interpretación jurídica correcta</h2>
+        <p class="mb-0">
+          Este artículo condiciona el <strong>uso y goce de áreas comunes</strong> a <strong>no estar clasificado como moroso</strong>.
+          La regla aplica a condóminos y, en general, a los habitantes del condominio.
+        </p>
+        <ul class="mt-2 mb-0">
+          <li>El uso debe ser conforme a la <strong>naturaleza y destino originales</strong> de las áreas/instalaciones.</li>
+          <li>Se prohíbe <strong>restringir</strong> o hacer <strong>más oneroso</strong> el derecho de los demás.</li>
+          <li>El texto prevé <strong>sanciones</strong> y posibles responsabilidades <strong>civiles o penales</strong>.</li>
+        </ul>
+      </section>
+    </div>
+
+    <!-- EJEMPLOS -->
+    <div class="col-12 col-lg-6">
+      <section class="article-card h-100">
+        <h2 class="h6 fw-bold mb-2">Ejemplos y escenarios</h2>
+        <ul class="mb-0">
+          <li><strong>✅ Cumple:</strong> usar áreas comunes respetando su destino (p. ej., tránsito, recreación) y sin afectar a otros.</li>
+          <li><strong>✅ Cumple:</strong> un residente no moroso utiliza instalaciones generales dentro de los horarios/reglas aplicables.</li>
+          <li><strong>❌ No cumple:</strong> impedir a otros el uso normal de un área común (bloqueos, apartados indebidos, restricciones).</li>
+          <li><strong>❌ No cumple:</strong> pretender usar áreas comunes estando clasificado como moroso.</li>
+        </ul>
+      </section>
+    </div>
+
+    <!-- SANCIÓN -->
+    <div class="col-12 col-lg-6">
+      <section class="article-card h-100">
+        <h2 class="h6 fw-bold mb-2">Sanción aplicable</h2>
+
+        <p class="mb-2">
+          <span class="badge badge-soft rounded-pill px-3 py-2">Estado: Remisión a sanciones del reglamento</span>
+        </p>
+
+        <p class="mb-0">
+          El propio texto indica que quien restrinja o haga más oneroso el derecho de los demás
+          “<strong>se hará acreedor a las sanciones previstas en este reglamento</strong>”, sin perjuicio de responsabilidades
+          civiles o penales.
+        </p>
+
+        <div class="hr-soft"></div>
+
+        <p class="mb-0">
+          Cuando la conducta encuadre en el Tabulador (p. ej., obstrucciones, ruidos, etc.), se aplica el renglón
+          correspondiente. En reincidencia, el Tabulador prevé aumentos de sanción.
+        </p>
+      </section>
+    </div>
+
   </div>
+
+  <!-- NAVEGACIÓN -->
+  <div class="d-flex justify-content-between mt-4">
+    <a class="btn btn-outline-secondary" href="dg-ac.html">← Anterior: DG-AC</a>
+    <a class="btn btn-success" href="../index.html">Volver al índice</a>
+  </div>
+
 </main>
 
-<footer>
-  <div class="wrap">
-    Interpretaciones y ejemplos: orientativos. El texto original del reglamento es la referencia principal.
-  </div>
+<footer class="bg-dark text-white text-center py-3 mt-4">
+  <p class="mb-0">&copy; 2025 Privada Lucania</p>
 </footer>
 
-<script>
-  const root = document.documentElement;
-  function applyTheme(theme){
-    if(theme === 'dark'){ root.setAttribute('data-theme','dark'); }
-    else if(theme === 'light'){ root.removeAttribute('data-theme'); }
-    else{
-      root.removeAttribute('data-theme');
-      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        root.setAttribute('data-theme','dark');
-      }
-    }
-  }
-  function setTheme(theme){ localStorage.setItem('theme', theme); applyTheme(theme); }
-  applyTheme(localStorage.getItem('theme') || 'system');
-  if (window.matchMedia) {
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-      if ((localStorage.getItem('theme') || 'system') === 'system') applyTheme('system');
-    });
-  }
-</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/js/site.js"></script>
 </body>
 </html>
